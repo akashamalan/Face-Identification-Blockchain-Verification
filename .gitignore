@@ -1,0 +1,47 @@
+# ── Environment ──────────────────────────────────────────────────
+.env
+.env.local
+*.env
+
+# ── Python ───────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+
+# ── Node ─────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.env
+
+# ── IDE ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ───────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Temporary uploads ────────────────────────────────────────────
+tmp_uploads/
+backend/tmp_uploads/
+
+# ── InsightFace model cache ──────────────────────────────────────
+~/.insightface/
+
+# ── Docker ───────────────────────────────────────────────────────
+docker-compose.override.yml
+
+# ── Coverage ─────────────────────────────────────────────────────
+htmlcov/
+.coverage

@@ -1,0 +1,18 @@
+# Requirements Traceability Matrix — Hacker House Goa 2026 Task 3
+
+This document audits the implementation against every technical and operational requirement specified in the Hacker House Goa 2026 Task 3 prompt.
+
+| Requirement | Implementation Location | Status | Test / Evidence | Known Limitation |
+|---|---|---|---|---|
+| **1. Face Scan & Detection** | `backend/app/providers/face/insightface_provider.py`<br>`backend/app/services/face_service.py`<br>`backend/app/api/routes/face.py` | Complete | `tests/integration/test_pipeline.py`<br>`tests/unit/test_api.py` | Requires clear single face in image; multiple faces or no faces return error. |
+| **2. Face Representation / Embedding** | `backend/app/providers/face/insightface_provider.py` | Complete | `tests/integration/test_pipeline.py` | 512-d embeddings are computed in-memory and deleted after request; not stored on disk. |
+| **3. Genuine Web / Social Search** | `backend/app/providers/search/serpapi_provider.py`<br>`backend/app/services/search_service.py` | Complete | `tests/unit/test_search_normalization.py`<br>`tests/integration/test_pipeline.py` | Requires `SERPAPI_API_KEY` for live Google Lens reverse image search. `MockSearchProvider` used in dev/test fallback. |
+| **4. Data Extraction & Result Selection** | `backend/app/services/search_service.py`<br>`backend/app/models/domain.py` | Complete | `tests/unit/test_search_normalization.py` | Extracts title, URL, domain, platform, snippet, image URL. Ranks social media domains higher. |
+| **5. Deterministic SHA-256 Fingerprinting** | `backend/app/utils/hashing.py`<br>`backend/app/services/fingerprint_service.py` | Complete | `tests/unit/test_hashing.py`<br>`tests/unit/test_verification.py` | Canonical JSON serialization (sorted keys, compact separators, UTF-8, no timestamps). |
+| **6. Blockchain Record & Smart Contract** | `contracts/VerificationRegistry.sol`<br>`backend/app/providers/blockchain/ethereum_provider.py`<br>`backend/app/services/blockchain_service.py` | Complete | `tests/integration/test_pipeline.py` | Ethereum Sepolia testnet supported via Web3.py. `LocalBlockchainProvider` provided for offline test execution. |
+| **7. Re-read Record & Recompute Hash** | `backend/app/services/verification_service.py`<br>`backend/app/api/routes/blockchain.py` | Complete | `tests/unit/test_verification.py` | Re-fetches record from blockchain by ID / TX hash and recalculates local SHA-256 hash. |
+| **8. VERIFIED / TAMPERED Detection** | `backend/app/services/verification_service.py` | Complete | `tests/unit/test_verification.py`<br>`test_tampering_detection` in `test_pipeline.py` | Mismatched data fields produce divergent hash, yielding explicit `TAMPERED` status. |
+| **9. End-to-End Pipeline API Endpoint** | `backend/app/api/routes/pipeline.py`<br>`backend/app/services/pipeline_service.py` | Complete | `POST /api/pipeline/run`<br>`tests/integration/test_api.py` | Returns structured JSON detailing timings, stage outputs, and verification status. |
+| **10. Demo Frontend UI** | `frontend/src/App.tsx`<br>`frontend/src/components/` | Complete | `npm run build`<br>Vite dev server at `http://localhost:5173` | Minimal glassmorphic React dashboard displaying sequential stage progress, hashes, and status. |
+| **11. Privacy & Ethical Constraints** | `backend/app/core/security.py`<br>`backend/app/utils/cleanup.py` | Complete | Code audit | Uploaded images cleaned up from temporary storage; no embeddings stored or exposed. |
+| **12. Health & Preflight Checks** | `backend/app/api/routes/health.py` | Complete | `GET /api/health`<br>`GET /api/preflight` | Reports status of face engine, search provider, and blockchain readiness. |
