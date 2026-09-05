@@ -7,50 +7,43 @@ export function HealthStatus() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    checkHealth()
-      .then(setHealth)
-      .catch(() => setError(true));
+    checkHealth().then(setHealth).catch(() => setError(true));
   }, []);
 
-  if (error) {
+  if (error)
     return (
-      <div className="flex items-center gap-2 text-xs text-accent-red">
-        <span className="w-2 h-2 rounded-full bg-accent-red" />
-        Backend offline
+      <div className="flex items-center gap-2">
+        <span className="chip chip-bad">backend offline</span>
       </div>
     );
-  }
 
-  if (!health) {
+  if (!health)
     return (
-      <div className="flex items-center gap-2 text-xs text-gray-500">
-        <span className="w-2 h-2 rounded-full bg-gray-500 animate-pulse" />
-        Connecting…
+      <div className="flex items-center gap-2">
+        <span className="chip">connecting…</span>
       </div>
     );
-  }
 
-  const allGood = health.status === "ok";
+  const ok = health.status === "ok";
 
   return (
-    <div className="flex items-center gap-3 text-xs">
-      <div className={`flex items-center gap-1.5 ${allGood ? "text-accent-green" : "text-accent-amber"}`}>
-        <span className={`w-2 h-2 rounded-full ${allGood ? "bg-accent-green" : "bg-accent-amber"}`} />
-        {health.status === "ok" ? "All systems ready" : "Degraded"}
-      </div>
-      {Object.entries(health.services).map(([key, val]) => (
+    <div className="flex items-center gap-2 flex-wrap">
+      <span className={`chip ${ok ? "chip-ok" : "chip-warn"}`}>
+        {ok ? "all systems ready" : "degraded"}
+      </span>
+      {Object.entries(health.services).map(([k, v]) => (
         <span
-          key={key}
-          className={`px-2 py-0.5 rounded-full ${
-            val === "ready" || val === "configured" || val === "connected"
-              ? "bg-accent-green/10 text-accent-green"
-              : "bg-accent-amber/10 text-accent-amber"
+          key={k}
+          className={`chip ${
+            v === "ready" || v === "configured" || v === "connected"
+              ? ""
+              : "chip-warn"
           }`}
         >
-          {key}: {val}
+          {k}: {v}
         </span>
       ))}
-      <span className="text-gray-600">v{health.version}</span>
+      <span className="eyebrow">v{health.version}</span>
     </div>
   );
 }

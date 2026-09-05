@@ -45,3 +45,10 @@ docker-compose.override.yml
 # ── Coverage ─────────────────────────────────────────────────────
 htmlcov/
 .coverage
+
+# ── Benchmark cache ──────────────────────────────────────────────
+# Face embeddings derived from 400 LFW images of identifiable people.
+# Embeddings are biometric templates, so they are deliberately NOT published
+# in this repo. Regenerate locally with:
+#   backend/venv/Scripts/python.exe scripts/benchmark_matching.py --pairs 100
+docs/benchmark_features.npz

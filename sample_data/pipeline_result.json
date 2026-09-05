@@ -1,0 +1,1752 @@
+{
+  "success": true,
+  "data": {
+    "pipeline_id": "d7787e15d6ca",
+    "status": "no_confident_match",
+    "face": {
+      "face_detected": true,
+      "face_count": 1,
+      "embedding_generated": true,
+      "bbox": [
+        208.88748168945312,
+        178.2781524658203,
+        352.3966064453125,
+        390.5074768066406
+      ],
+      "confidence": 0.7956160306930542,
+      "processing_time_ms": 3958.8,
+      "engine": "insightface:buffalo_l",
+      "det_score": 0.7956160306930542
+    },
+    "search": {
+      "provider": "SerpApiSearchProvider",
+      "results_found": 59,
+      "results": [
+        {
+          "title": "TIL that in Computer Science a famous standard test image, a ...",
+          "url": "https://www.reddit.com/r/todayilearned/comments/dpdg5b/til_that_in_computer_science_a_famous_standard/",
+          "domain": "reddit.com",
+          "platform": "reddit.com",
+          "snippet": "Reddit",
+          "image_url": "https://www.reddit.com/r/todayilearned/comments/dpdg5b/til_that_in_computer_science_a_famous_standard/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRlLJXmy_Vl7zRTcrpHBZmVq1gdDiSBk5pZb8uIEMdbJ8RPavOo",
+          "metadata": {
+            "position": 1,
+            "source": "Reddit",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAh1BMVEVHcEz_RQD_RgD_RQD_RQD_RQD_RAD_RQD_RQD_RQD-____RQD_NwD_PQD_QQDw9vj3_P3i7O_M2eD07-z6fFvQ4OcBBAb_Ug30uKz408n7Zjr7jnLa5Ojcj4T5cEzYop7Qz9HDycv0nYrLQiXpWzwZJChaNitkZWaiLgTvGwCIfHuOW01HcEyTqjndAAAALXRSTlMAyU9SiuIMIvWe_____________________________________________wAEJt9nAAABrUlEQVQ4jYVTWXaDMAyEpKyyvBA7Zg9kb3v_-1U2JYG2eZ0fY8_YEtIoCB6It1mYAqRhto2D30gyIh_Ikp_8G_zA2_p6tCKRMQ7R4pEkXfGsqaoaIU1e8HjMCZY_Fev3-f2mSHBEgOiv_E6X64eSUjrBlGmyzv5y4rpVquB-54Jky-f5_co51ofOToKM6ucJpD1naPX1U1vGGHJ_BGkcbN1_Wa2B9eUu99iVPQNNQqI2LgJrBJ1W-QIVaUXDXIwQUOcvoBHCIAVWvRJUDNIAHoLDYSbmLxKAE5RCyjzv3uvv8-6972iRonSCFHhtSCFOUJ8nwRnqkyDe1NQPShKwb0lxtrb_zs3aMxW77anaoS8kBRGy0s1ch0ZXUvgA9JuuUNiIHUmkKoZxHArXKyFEg75QMZmBg1FKCXHZe1yIVaoFV-t4ahZq07ZKjJNgdHSrcWrW1G7sTFEYNd72-9uoWlOYDud2T4ZheigKp1HGrYNmC2t7y6E9DsaTxgxH6-9HK9NyhLopCU0N3gsLW8-m4jQQzizT7sn_miqP6B_-OXqbP9g0ez13bvw3i_H_Asr5MBnHLL6RAAAAAElFTkSuQmCC.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "Oh how far we've come : r/computervision",
+          "url": "https://www.reddit.com/r/computervision/comments/1q7hizl/oh_how_far_weve_come/",
+          "domain": "reddit.com",
+          "platform": "reddit.com",
+          "snippet": "Reddit",
+          "image_url": "https://www.reddit.com/r/computervision/comments/1q7hizl/oh_how_far_weve_come/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTc2xrfbTv1RlQC36BHy3tNi_iV6ZODXcMuSmgEZZvJpZPwvFJP",
+          "metadata": {
+            "position": 2,
+            "source": "Reddit",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAh1BMVEVHcEz_RQD_RgD_RQD_RQD_RQD_RAD_RQD_RQD_RQD-____RQD_NwD_PQD_QQDw9vj3_P3i7O_M2eD07-z6fFvQ4OcBBAb_Ug30uKz408n7Zjr7jnLa5Ojcj4T5cEzYop7Qz9HDycv0nYrLQiXpWzwZJChaNitkZWaiLgTvGwCIfHuOW01HcEyTqjndAAAALXRSTlMAyU9SiuIMIvWe_____________________________________________wAEJt9nAAABrUlEQVQ4jYVTWXaDMAyEpKyyvBA7Zg9kb3v_-1U2JYG2eZ0fY8_YEtIoCB6It1mYAqRhto2D30gyIh_Ikp_8G_zA2_p6tCKRMQ7R4pEkXfGsqaoaIU1e8HjMCZY_Fev3-f2mSHBEgOiv_E6X64eSUjrBlGmyzv5y4rpVquB-54Jky-f5_co51ofOToKM6ucJpD1naPX1U1vGGHJ_BGkcbN1_Wa2B9eUu99iVPQNNQqI2LgJrBJ1W-QIVaUXDXIwQUOcvoBHCIAVWvRJUDNIAHoLDYSbmLxKAE5RCyjzv3uvv8-6972iRonSCFHhtSCFOUJ8nwRnqkyDe1NQPShKwb0lxtrb_zs3aMxW77anaoS8kBRGy0s1ch0ZXUvgA9JuuUNiIHUmkKoZxHArXKyFEg75QMZmBg1FKCXHZe1yIVaoFV-t4ahZq07ZKjJNgdHSrcWrW1G7sTFEYNd72-9uoWlOYDud2T4ZheigKp1HGrYNmC2t7y6E9DsaTxgxH6-9HK9NyhLopCU0N3gsLW8-m4jQQzizT7sn_miqP6B_-OXqbP9g0ez13bvw3i_H_Asr5MBnHLL6RAAAAAElFTkSuQmCC.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "Zoid Kirsch on X: \"The story of how I came to own a copy of ...",
+          "url": "https://x.com/ZoidCTF/status/1414325266298540040",
+          "domain": "x.com",
+          "platform": "x.com",
+          "snippet": "x.com",
+          "image_url": "https://x.com/ZoidCTF/status/1414325266298540040",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSNo06Rln9i1a4QR20IB-vpw20suxIYa3yqZgPdJSwzgXtqFeAf",
+          "metadata": {
+            "position": 8,
+            "source": "x.com",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAM1BMVEUAAAD____f398QEBAgICDv7-9wcHBAQECAgIC_v7_Pz8-vr6-QkJAwMDBQUFCfn59gYGBA_ZVxAAAA2ElEQVQ4jc1SSRLDIAzD7GuS_7-2yKQNENJrqwMMFiBbthB_gkSMrY_F_qik8d4bo69QJt9fd2SFOCh8An7k8aAIseMaw1KaslBSKig1kUL1NMFRxsIiWko98xBxWCx4s-CFihCJRquIqwsUJFZMvFKdYcFYmgvsEKAdHgQ4exOw3EucRfKXL2BoehSpBRo29EkkkbXN0LUIdzA1Q7clj3fvrt1FNoq8O9rhapj5Wv7ZoUzHWfDAXx1uUxHGjioJA07wVLCrQ4HdKdPufexD04jW_4Dl2PwELxkCBNiT_pD8AAAAAElFTkSuQmCC.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "lena.jpg now : r/programming",
+          "url": "https://www.reddit.com/r/programming/comments/dobz8s/lenajpg_now/",
+          "domain": "reddit.com",
+          "platform": "reddit.com",
+          "snippet": "Reddit",
+          "image_url": "https://www.reddit.com/r/programming/comments/dobz8s/lenajpg_now/",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMO9Aqa0bNKSScKlsubOe3UguSIMBJmFJm8C9WSEKTX7jFt8H7",
+          "metadata": {
+            "position": 10,
+            "source": "Reddit",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAh1BMVEVHcEz_RQD_RgD_RQD_RQD_RQD_RAD_RQD_RQD_RQD-____RQD_NwD_PQD_QQDw9vj3_P3i7O_M2eD07-z6fFvQ4OcBBAb_Ug30uKz408n7Zjr7jnLa5Ojcj4T5cEzYop7Qz9HDycv0nYrLQiXpWzwZJChaNitkZWaiLgTvGwCIfHuOW01HcEyTqjndAAAALXRSTlMAyU9SiuIMIvWe_____________________________________________wAEJt9nAAABrUlEQVQ4jYVTWXaDMAyEpKyyvBA7Zg9kb3v_-1U2JYG2eZ0fY8_YEtIoCB6It1mYAqRhto2D30gyIh_Ikp_8G_zA2_p6tCKRMQ7R4pEkXfGsqaoaIU1e8HjMCZY_Fev3-f2mSHBEgOiv_E6X64eSUjrBlGmyzv5y4rpVquB-54Jky-f5_co51ofOToKM6ucJpD1naPX1U1vGGHJ_BGkcbN1_Wa2B9eUu99iVPQNNQqI2LgJrBJ1W-QIVaUXDXIwQUOcvoBHCIAVWvRJUDNIAHoLDYSbmLxKAE5RCyjzv3uvv8-6972iRonSCFHhtSCFOUJ8nwRnqkyDe1NQPShKwb0lxtrb_zs3aMxW77anaoS8kBRGy0s1ch0ZXUvgA9JuuUNiIHUmkKoZxHArXKyFEg75QMZmBg1FKCXHZe1yIVaoFV-t4ahZq07ZKjJNgdHSrcWrW1G7sTFEYNd72-9uoWlOYDud2T4ZheigKp1HGrYNmC2t7y6E9DsaTxgxH6-9HK9NyhLopCU0N3gsLW8-m4jQQzizT7sn_miqP6B_-OXqbP9g0ez13bvw3i_H_Asr5MBnHLL6RAAAAAElFTkSuQmCC.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "Lenna - Wikipedia | Demetrios G. Sampson",
+          "url": "https://www.linkedin.com/posts/desampson_lenna-wikipedia-activity-7176451529174913024-1wD8",
+          "domain": "linkedin.com",
+          "platform": "linkedin.com",
+          "snippet": "LinkedIn",
+          "image_url": "https://www.linkedin.com/posts/desampson_lenna-wikipedia-activity-7176451529174913024-1wD8",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS5MPUR69kj3uPUi7OdIzj-ILzxZP15G8GcCGU-sDrrselCPsWt",
+          "metadata": {
+            "position": 41,
+            "source": "LinkedIn",
+            "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcTFMvFisG5Yfyq07VS0hk1otTr6uQvufSrlgYLzmBkZlxd7MQh66ZmKRUOdwfXrertN7RslYSLWGQCDyxLn3JsHLob5z5LPzTRUUQlVmSHaBnVJlJa8"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "Image Processing in Java. This project focuses on ...",
+          "url": "https://medium.com/@mskhan_82062/image-processing-in-java-8c98c1ee7b30",
+          "domain": "medium.com",
+          "platform": "medium.com",
+          "snippet": "Medium",
+          "image_url": "https://medium.com/@mskhan_82062/image-processing-in-java-8c98c1ee7b30",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQATdmDzxk3PZ2g8gYDs8hoHcoe53xUEv-dZUl8eq1yRhAKZ6F2",
+          "metadata": {
+            "position": 47,
+            "source": "Medium",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcRWBs_yCHe46wnwYqSYMzlohZesG8HK9hN684DcXkXcUBi1m0tCn0vUhr0s3NsbdPLMxbMgCNZNvpgZjvOQC8qqAbEcExFN3d65XbVI8qr1"
+          },
+          "similarity": null,
+          "match_reason": "download failed: HTTP 403"
+        },
+        {
+          "title": "Wavelet image hash in Python : r/Python",
+          "url": "https://www.reddit.com/r/Python/comments/4rkgs8/wavelet_image_hash_in_python/",
+          "domain": "reddit.com",
+          "platform": "reddit.com",
+          "snippet": "Reddit",
+          "image_url": "https://www.reddit.com/r/Python/comments/4rkgs8/wavelet_image_hash_in_python/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRnI3dL2rC3knbtjwxI8HnxBBckqCenL0XjQIJVLW9MiK_X5J-",
+          "metadata": {
+            "position": 53,
+            "source": "Reddit",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcRFeJS-IhfJCysoVmCqJ1d-1lzbIHTsbcy4DrBsZJpxQ31zznhym7THnNEKCEnngpvdl4aupEFtEblIPBEMJY7_biy055d40m6TYfVg7CpFOrWOXw"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "Somehow, at some point, it became taboo to use this image ...",
+          "url": "https://www.linkedin.com/posts/tacertain_somehow-at-some-point-it-became-taboo-activity-7201434494376042496-A_ah",
+          "domain": "linkedin.com",
+          "platform": "linkedin.com",
+          "snippet": "LinkedIn",
+          "image_url": "https://www.linkedin.com/posts/tacertain_somehow-at-some-point-it-became-taboo-activity-7201434494376042496-A_ah",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRfe6eSFpQfnPcxmkvxYTuHMMuOW0ME8nQlGgW6XR5BU2fG81wP",
+          "metadata": {
+            "position": 56,
+            "source": "LinkedIn",
+            "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcTFMvFisG5Yfyq07VS0hk1otTr6uQvufSrlgYLzmBkZlxd7MQh66ZmKRUOdwfXrertN7RslYSLWGQCDyxLn3JsHLob5z5LPzTRUUQlVmSHaBnVJlJa8"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "\u041b\u0435\u043d\u0430 (\u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435) \u2014 \u0412\u0438\u043a\u0438\u043f\u0435\u0434\u0438\u044f",
+          "url": "https://ru.wikipedia.org/wiki/\u041b\u0435\u043d\u0430_(\u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435)",
+          "domain": "ru.wikipedia.org",
+          "platform": "",
+          "snippet": "\u0412\u0438\u043a\u0438\u043f\u0435\u0434\u0438\u044f",
+          "image_url": "https://ru.wikipedia.org/wiki/\u041b\u0435\u043d\u0430_(\u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435)",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeAY7pnQ7mlCvSEhVbmkW-fA04j8_Yza4YM9dnqAd6kzYOBiIa",
+          "metadata": {
+            "position": 3,
+            "source": "\u0412\u0438\u043a\u0438\u043f\u0435\u0434\u0438\u044f",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB8klEQVRYhe2X0Y3DIAyG7Q7hFTxBZsgMGYAdGIEVWCKT5J0ZWMK-h5MREEiv1VW5h0PiIXXAn-3fVoPQLRHR_rffXI_HA-vn8vBpxzMQvMN5DfG4w3G98K7obd2egX8AEBFdlkURUQGgbETUbdtURFRElJkbOxFpjFFFREMISkSN3WwxxtNZACh3gznIOSsRFZCcc3Fu2zlXLjiOo7GllBQAlJk1pXQ6u21bcVzfDfVLIYTiYN_30yU55wLonGts-75PzxkAEZ0Cg96BpXJZluFF3ntFREXE5jJm1nVdh2cMPIRwssHIwbMsWKm89yV6RDyVpb5zFP0QwGgRcRpRnwVmbgTbbyI6lWwKYPUyByNB1Vmwd0fv1dqY2YcAKaUCMIvMSoWI0-hEvlt8lskpgIjouq7Fwah2dalmAMdxKCJOO-MSwIQFAEVso9oi4lRgzrlpNz0FsPTNHBig7b7FLEM2Ed8CMAGNHDCzOufKhCOixm7j-er-pwB9mvvoU0plBANAA0lEw8HzMkCMsaTZ0mnR94I1SAMc6eJlgHo8M_Owr2s9hBB0XdfL1nwJQKSdfLPZYIK1zpkNnrcA6p6fTb1asFeD5y0Ake-evpqMpo1ng-dtgJyzeu8vhZVS-pHy63373_L_L6O_8XFar0-D9J_nX3uIuuF08s_DAAAAAElFTkSuQmCC.png"
+          },
+          "similarity": null,
+          "match_reason": "download failed: HTTP 403"
+        },
+        {
+          "title": "Cinnema Magazine",
+          "url": "https://patugarte.github.io/cinnema-magazine/",
+          "domain": "patugarte.github.io",
+          "platform": "",
+          "snippet": "patugarte.github.io",
+          "image_url": "https://patugarte.github.io/cinnema-magazine/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQFROG2kFgiPJ9df5iDLk2xEgaoP96JUAst6kfra9P9l8_oy1YZ",
+          "metadata": {
+            "position": 4,
+            "source": "patugarte.github.io",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAJ1BMVEVHcExfY2dfY2heYmhfY2hfY2hfY2hfYmhfY2hfY2hfY2heYmhfY2hLdvrHAAAADHRSTlMAK6UPy06GQ-ly81yP6INFAAAA4ElEQVQ4ja1TWw7DIAyD8AiP3P-8I7QBQttNmuqPChGXOMYY8yqcxRDQuqdy9Ikako_2pmyBFsCFYgsppI2RVRV9-2T1v_7bOO63nGGTquNxZJmMqc-3Oa3swU2DsWdc0yGGxDuCqURxcgWr9ELeicQi_VeXQcxAopr18eIN9kUgCqxjJ_T9ubgqHQQ8tC2MrUUTCXraTWQbs2g_tjG5UPtCEaZRxtHJHSoBu33jtuRiFkujmpvjlDfTdaj4PsEdIw-o0LHVviqCitwZqgIjOuUa6x-xZ8p8OI9v6_vT-xMffsYRIhWPnuoAAAAASUVORK5CYII.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "The sample images that used to test the proposed ...",
+          "url": "https://www.researchgate.net/figure/The-sample-images-that-used-to-test-the-proposed-steganography-method-for-a-Lena-b_fig1_339540037",
+          "domain": "researchgate.net",
+          "platform": "",
+          "snippet": "ResearchGate",
+          "image_url": "https://www.researchgate.net/figure/The-sample-images-that-used-to-test-the-proposed-steganography-method-for-a-Lena-b_fig1_339540037",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRVM314ss2qR3k7peyIWDHU31gOVcNEGSd3bqv2iQmWzjdJrBEp",
+          "metadata": {
+            "position": 5,
+            "source": "ResearchGate",
+            "source_icon": "https://serpapi.com/searches/6a9a6315f30d13c52edcb6eb/images/l7LCndZLFDw6hTh6gf5cbNQRnITQ-3yAB6-vcKbVJP0.png"
+          },
+          "similarity": null,
+          "match_reason": "download failed: HTTP 403"
+        },
+        {
+          "title": "The Playboy centrefold at the centre of computer science",
+          "url": "https://phys.org/news/2015-05-playboy-centrefold-centre-science.html",
+          "domain": "phys.org",
+          "platform": "",
+          "snippet": "Phys.org",
+          "image_url": "https://phys.org/news/2015-05-playboy-centrefold-centre-science.html",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTbGTOw50X9JujTphQ4mMW69uiHuK6peanKWCVT9NP8XazfUP8d",
+          "metadata": {
+            "position": 6,
+            "source": "Phys.org",
+            "source_icon": "https://serpapi.com/searches/6a9a6315f30d13c52edcb6eb/images/xZzqwD3l6YUW04ddTUzQQ09p5GfNja_tEHgOVPY7K1Y.png"
+          },
+          "similarity": null,
+          "match_reason": "download failed: HTTP 400"
+        },
+        {
+          "title": "John Paul Chacha's Lab - Blog - History of Lena",
+          "url": "https://www.jpchacha.com/blog/index.php?id=2",
+          "domain": "jpchacha.com",
+          "platform": "",
+          "snippet": "John Paul Chacha's Lab",
+          "image_url": "https://www.jpchacha.com/blog/index.php?id=2",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlhIcUlbWfU31gG7jlKEJ1l5S3krR0-32f_DOhnumIsOOiNI-O",
+          "metadata": {
+            "position": 7,
+            "source": "John Paul Chacha's Lab",
+            "source_icon": "https://serpapi.com/searches/6a9a6315f30d13c52edcb6eb/images/lpFT_Kx6mU37h-eJyOMf1P9WaTBf2v1aasV_9WwYj0E.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "The Story of Lena | THEME",
+          "url": "https://the.me/the-story-of-lena/",
+          "domain": "the.me",
+          "platform": "",
+          "snippet": "THEME",
+          "image_url": "https://the.me/the-story-of-lena/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT5Y2E3EQd_v_xsFdbQjQBjtMIITqyeZJ5FlPhRQU_cQ1KVy9yr",
+          "metadata": {
+            "position": 9,
+            "source": "THEME",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEX-_v4AAAD___8iIiIXFxfu7u5BQUENDQ0HBwf5-flERESvr6_09PRtbW1mZmZLS0sbGxsqKiovLy9ZWVnS0tKXl5e_v79UVFS3t7c1NTXZ2dl8fHyEhISQkJDf399fX1-ioqJ_f386OjrIyMiVlZUOOReAAAABfklEQVQ4jX2T22KDIAyGSQQBERG1nk9r9_7POETbzsqWKyEf8c-J4G7kaofjcIeQN-AOLP2DILv_1iX18_tM-NjICuBFhXPbS_wgyHaBKhrrm65jkTdKnokNwDTWa5ENFJzR9ioG02RqoFvAEyYgF9fli1IKw8QB8j4AMBM5FwxzHgbIKIBTYes5AhDqAmxZQlkm06hsGOhzKFsDQlAhoJsDESxoZcBneW_aSn5UFFkHfFzLTScUTc6zW3XKFVsOWaoaD0BUxhxo8zglCfljEHCYiHVZcKvewLeAZXr5nfFYj1P7VIJ9BEJTOBuPEt3uQmQGYBMImEjqLcDDPbbnANR4vbwzriaor0-XVHVe7VC5Yez25Jr85bcV4qx9EJeLk-g6OPRyefoLxVxg2SYuMbESpou7rtxgHQA34-i7gUxlZkodytJt7uTeC4jMcHTLlUGS117gbI8yqstg-zPWThS32fZ_EgZMNtXzxwruS3ncyeBiIflzuX8v73_r_wOr9xNC1zwobwAAAABJRU5ErkJggg.png"
+          },
+          "similarity": null,
+          "match_reason": "download failed: HTTP 403"
+        },
+        {
+          "title": "'Lena-Barbara' experiment",
+          "url": "https://helios2.mi.parisdescartes.fr/~jdelon/demos/artefact_removal_html/Lena-Barbara.html",
+          "domain": "helios2.mi.parisdescartes.fr",
+          "platform": "",
+          "snippet": "Paris Descartes",
+          "image_url": "https://helios2.mi.parisdescartes.fr/~jdelon/demos/artefact_removal_html/Lena-Barbara.html",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCj0pg8C4pKpk-2SvzjrSgHNCCHOWew_BTRe7GcC6EnBJI82VG",
+          "metadata": {
+            "position": 11,
+            "source": "Paris Descartes",
+            "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAJ1BMVEVHcExfY2dfY2heYmhfY2hfY2hfY2hfYmhfY2hfY2hfY2heYmhfY2hLdvrHAAAADHRSTlMAK6UPy06GQ-ly81yP6INFAAAA4ElEQVQ4ja1TWw7DIAyD8AiP3P-8I7QBQttNmuqPChGXOMYY8yqcxRDQuqdy9Ikako_2pmyBFsCFYgsppI2RVRV9-2T1v_7bOO63nGGTquNxZJmMqc-3Oa3swU2DsWdc0yGGxDuCqURxcgWr9ELeicQi_VeXQcxAopr18eIN9kUgCqxjJ_T9ubgqHQQ8tC2MrUUTCXraTWQbs2g_tjG5UPtCEaZRxtHJHSoBu33jtuRiFkujmpvjlDfTdaj4PsEdIw-o0LHVviqCitwZqgIjOuUa6x-xZ8p8OI9v6_vT-xMffsYRIhWPnuoAAAAASUVORK5CYII.png"
+          },
+          "similarity": null,
+          "match_reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "title": "Medium",
+          "url": "https://onezero.medium.com/a-nude-playboy-photo-has-been-a-mainstay-in-testing-tech-for-decades-b8cdb434dce1",
+          "domain": "onezero.medium.com",
+          "platform": "",
+          "snippet": "Medium",
+          "image_url": "https://onezero.medium.com/a-nude-playboy-photo-has-been-a-mainstay-in-testing-tech-for-decades-b8cdb434dce1",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT4ffG2CRC_RBSgqboqeiRRCZdOnvxROIj_t0jXVG8i8Me7SlEu",
+          "metadata": {
+            "position": 12,
+            "source": "Medium",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcTA_BjPBa47ppCDCVrAU_8Sykgg0dBGEtzjvdD9r_bTKTjXIYF4X2z8LLKnDcDjQ3wRt15nOX6DHHwjH5VAPkdjN3SXtbak5DUadVf6Nzue05my9RVLV2w"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "a) original Lena image (512x512) b) 15 % of the pixels of te ...",
+          "url": "https://www.researchgate.net/figure/a-original-Lena-image-512x512-b-15-of-the-pixels-of-te-input-image-randomly-chosen_fig3_2548793",
+          "domain": "researchgate.net",
+          "platform": "",
+          "snippet": "ResearchGate",
+          "image_url": "https://www.researchgate.net/figure/a-original-Lena-image-512x512-b-15-of-the-pixels-of-te-input-image-randomly-chosen_fig3_2548793",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbhDp5ix3eAIR8qkaaZnseYwUCd7ekUshIg_0bXjHMCMYInzH",
+          "metadata": {
+            "position": 13,
+            "source": "ResearchGate",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcQayCGz2Ruota-8385pa0qrFkxAsul6va_TIR6tOOvlQp0Raxm8JHo6z7ypM6q0TEb9FoceHIKAdn_n5j-FhaES6TTHA52D9KRDSkoW-UAoDKSzDI1Qzjq_Ow"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "The Rest of the Lenna Story",
+          "url": "http://www.lenna.org/",
+          "domain": "lenna.org",
+          "platform": "",
+          "snippet": "www.lenna.org",
+          "image_url": "http://www.lenna.org/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTc0mZu_vGZ2GjTiZHp0sNA89LVU28MPdGETZSEpkOpkxNf_1IG",
+          "metadata": {
+            "position": 14,
+            "source": "www.lenna.org",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTnK2w8JUzHeixX_dKy9REJ4w7HXg6-eiR40tRbbUWH4xb-s0D97mwKW7GEiQTMkxyL8zJXZR4GfKq76-fR-Dz7ys7IfY94WIF_R672MgYq-6Q"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "1972 Playboy Magazine - The \"Lenna\" Edition | Kevin Rye.net ...",
+          "url": "https://kevinrye.net/index_files/1972_playboy_magazine_the_lenna_edition.php",
+          "domain": "kevinrye.net",
+          "platform": "",
+          "snippet": "Kevin Rye",
+          "image_url": "https://kevinrye.net/index_files/1972_playboy_magazine_the_lenna_edition.php",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT0VPwAnNdXc-Hoikzz-taB2Utqd50lMdZGltWyI47UpOZZIb6w",
+          "metadata": {
+            "position": 15,
+            "source": "Kevin Rye",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcT72Q1ec1QJgzI6TpTogjxK3AJaW0PfwTC8jTApYTJVexYeLvX5vMUhOSWk2Gzrd5TCXrcR-Ksv9BKuBEjE8PAmSenZ4qQ6M45xBxDRIIHq-gY"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Sebastian Schmieg - Search by Image, Live (Lena/Fabio ...",
+          "url": "https://thephotographersgallery.org.uk/whats-on/sebastian-schmieg-search-image-live-lenafabio",
+          "domain": "thephotographersgallery.org.uk",
+          "platform": "",
+          "snippet": "The Photographers Gallery",
+          "image_url": "https://thephotographersgallery.org.uk/whats-on/sebastian-schmieg-search-image-live-lenafabio",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCHwqIY58TtTsoEp0U8DZbikcYfxVIWE943pHYIqYqXv0U2ZCb",
+          "metadata": {
+            "position": 16,
+            "source": "The Photographers Gallery",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcSrnKPcQwvOk4D4iCiWGYLQO-Hqqx7tvO5Soj7G6YKnFUHRdFB2Q5Qo7dBw1aKiPCK7psnpJtokWHrpi2NFEAgXTVXbGHVSYEB6xtLMEcskeklA4sbLhOBsrVSMYR0XdmdE6eA"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "lekcja] Mapy pikselowe | Kurs OpenGL, C++",
+          "url": "https://cpp0x.pl/kursy/Kurs-OpenGL-C++/Mapy-pikselowe/224",
+          "domain": "cpp0x.pl",
+          "platform": "",
+          "snippet": "Serwis programistyczny C++",
+          "image_url": "https://cpp0x.pl/kursy/Kurs-OpenGL-C++/Mapy-pikselowe/224",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTFnjZW8Wi63vb7qxYlPLMc-nqwyNVZhakVUBwq7-SoKzltJNZA",
+          "metadata": {
+            "position": 17,
+            "source": "Serwis programistyczny C++",
+            "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcS-b_nE9mrHGg7neEpgG-abVLIpWzBWMpUXjx7em8t2Z_aTv1_tRyRW-2ClELlXX-4TxvFiZG9pgbwgRUPtpveyL1pw6bxfZ_qUr_neMA"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Goodbye 'Lenna': Science just ditched its Playboy pin-up for ...",
+          "url": "https://interestingengineering.com/culture/bye-lenna-iconic-playboy-pic-banned-from-research-papers",
+          "domain": "interestingengineering.com",
+          "platform": "",
+          "snippet": "Interesting Engineering",
+          "image_url": "https://interestingengineering.com/culture/bye-lenna-iconic-playboy-pic-banned-from-research-papers",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSZN5WWHFFddmd9afjIfm1lJnhaScLr9vmBK-cKvtQvQLYi4z21",
+          "metadata": {
+            "position": 18,
+            "source": "Interesting Engineering",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTnC9RLtaXPdOiStiIlysCwAsl7LhBq7n0JgQ4EAmmW4BNKu0rrqh2E-BQeI5L96c9c0ZfnMmHpXHa5fqMeL7et1gkzg4jU1yMzCuZj0wgJ9Yelf1PhTxaVTFIqU61Mmg"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena | TomRoelandts.com",
+          "url": "https://tomroelandts.com/articles/lena",
+          "domain": "tomroelandts.com",
+          "platform": "",
+          "snippet": "TomRoelandts.com",
+          "image_url": "https://tomroelandts.com/articles/lena",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQyLgBAvmbDU9QE9FdvTG0slR5VlsBk_TFKn5Z5UTL00ANMcq7s",
+          "metadata": {
+            "position": 19,
+            "source": "TomRoelandts.com",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcTOhCItLassGI2e-KDJFcVAXvajLZwFx9ljeD13t8TTkvPChrIJ1tqKwhjSfEGWHAUEBcNoxhFWGxmCO-OYT3mUGnzh7sWATl51Tkg2awqXYmeuwbrc"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "La chronique binaire - Lena, la 1\u00e8re dame du web | RTS",
+          "url": "https://www.rts.ch/audio-podcast/2019/audio/la-chronique-binaire-lena-la-1ere-dame-du-web-25088943.html",
+          "domain": "rts.ch",
+          "platform": "",
+          "snippet": "RTS",
+          "image_url": "https://www.rts.ch/audio-podcast/2019/audio/la-chronique-binaire-lena-la-1ere-dame-du-web-25088943.html",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT_4_R2sX4-MU9WX7RssSvMX2hnLAjfVDORO46VrDQJb1ekn592",
+          "metadata": {
+            "position": 20,
+            "source": "RTS",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcS1fF4Kf1HtLvSRP3HDwMk3n6___05wFqhDGyvBwNxfhIi1dLZ0wtyFMvwbwjPuVQFPrxHR1X9qjHbEuYnciXZ9CrqyJVXqWIpvVSR9K0uI"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena Sj\u00f6\u00f6blom: The First Lady of the Internet | Artsy",
+          "url": "https://www.artsy.net/article/addicted-art-gallery-lena-sjooblom-first-lady-internet",
+          "domain": "artsy.net",
+          "platform": "",
+          "snippet": "Artsy",
+          "image_url": "https://www.artsy.net/article/addicted-art-gallery-lena-sjooblom-first-lady-internet",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRevLurWXZWBh-onHAq0j3tBgwEeNVRuIa-Ud8ttfi6X90o9tNE",
+          "metadata": {
+            "position": 21,
+            "source": "Artsy",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcRZ8v73ABYqw91JEAinJ18jZaxtSzPp5bKO1NNygoDIp_CzKAG1kZtBEZv5t6ELSwqh6Ro_yXNB8kEU-8guztlKLHi2CUxUNIXhtLZE0f6X-8ew"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Addicted Art Gallery",
+          "url": "https://www.addictedgallery.com/Blog/lena-sjblom-the-first-lady-of-the-internet/",
+          "domain": "addictedgallery.com",
+          "platform": "",
+          "snippet": "Addicted Art Gallery",
+          "image_url": "https://www.addictedgallery.com/Blog/lena-sjblom-the-first-lady-of-the-internet/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR_UdmoyAv9uQV9U18_T1jkvhQRiw3yL0i-xVTkPZcXt9w0rtOK",
+          "metadata": {
+            "position": 22,
+            "source": "Addicted Art Gallery",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTagtwb1tgK2gGnwuUAPEmEeUjA7eBbregV9y5MFL7Lxs3lU5ZusVTT4ZeV7FCbu9Q6QSoUQNPdFnHc61AIYtbIs4iFMzhripVVtLje0iMePW4tR9nu_9Bf3dCfDQ"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "BPG/JPEG comparison on the Lena picture",
+          "url": "https://bellard.org/bpg/lena.html",
+          "domain": "bellard.org",
+          "platform": "",
+          "snippet": "bellard.org",
+          "image_url": "https://bellard.org/bpg/lena.html",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTDIl-P7f9eIPXa1sTdFFiYJ6u9qAvcxCLiB6y1UMSO6yRn7B63",
+          "metadata": {
+            "position": 23,
+            "source": "bellard.org",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcT8vZy0eOI67wHVNwKdZdf2zVSS_Cfqd_mjSZSJaevXYuUXY8R1TmBZ2VbwYy-jm3-ax9KBZtoOZQ88T_uJotLmlem4j_Kh84zLvCb1qQcR0g"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Susan Corner Detection",
+          "url": "https://marvinproject.net/en/plugins/susan.html",
+          "domain": "marvinproject.net",
+          "platform": "",
+          "snippet": "Marvin Image Processing Framework",
+          "image_url": "https://marvinproject.net/en/plugins/susan.html",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQz8uYSVGh3GHsgdxiDq_iFoEItBdO5XUgDPK7buBtTFPHduTTs",
+          "metadata": {
+            "position": 24,
+            "source": "Marvin Image Processing Framework",
+            "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcSzApoKa2Skl58hTgnoEdggQUqVJOo_QhCZ6x1znVKLmTJ90KaBDNn2xt7jklT8J5llKqlZrZ6DdEe0_2kMTnWwrb9ZO5f2wxVnXMxRe3COkwJxg2JUog"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "\u041b\u0435\u043d\u0430 (\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u043d\u044f) \u2014 \u0412\u0456\u043a\u0456\u043f\u0435\u0434\u0456\u044f",
+          "url": "https://uk.wikipedia.org/wiki/\u041b\u0435\u043d\u0430_(\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u043d\u044f)",
+          "domain": "uk.wikipedia.org",
+          "platform": "",
+          "snippet": "\u0412\u0456\u043a\u0456\u043f\u0435\u0434\u0456\u044f",
+          "image_url": "https://uk.wikipedia.org/wiki/\u041b\u0435\u043d\u0430_(\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u043d\u044f)",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQFwiCJ9-E6ruWEtp3qy_sP0jYA47m_xBLVGp4D7AUvQxL8V7oi",
+          "metadata": {
+            "position": 25,
+            "source": "\u0412\u0456\u043a\u0456\u043f\u0435\u0434\u0456\u044f",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcT1xa9kabSPzIAKywWY9ih4dn1Uza-wQC-TSODp2BelPBTSCj3Dy9BMVPS1mETYUmWiE2umA2OsEnRIJ8JY5y2iWzGFXuBSaP9g8K96GFoI7wrSAAfM"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena S\u00f6derberg Pictures (4 Images)",
+          "url": "https://hotnessrater.com/person/62792/lena-soderberg",
+          "domain": "hotnessrater.com",
+          "platform": "",
+          "snippet": "Hotness Rater",
+          "image_url": "https://hotnessrater.com/person/62792/lena-soderberg",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShOAK9Lg52l4sk3J4QMReVIleRkgz8LYYqM7gRR0ExGJ6dcX746QBmkQHskdcrjpI2",
+          "metadata": {
+            "position": 26,
+            "source": "Hotness Rater",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcRHl9d71iDw9gEairfSLsEBQdREdniTn0SLrN94XMrIB69EsqTyFn3bvtN7rhMsoXNG3TAhWDUapOSeFCVOUo17kXw9G_Egda_7Mp30QqEhspgkRxBo"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Was a Playboy Centerfold Really the Standard Test Image for ...",
+          "url": "https://popculturereferences.com/was-a-playboy-centerfold-really-the-standard-test-image-for-image-processing-algorithms/",
+          "domain": "popculturereferences.com",
+          "platform": "",
+          "snippet": "Pop Culture References",
+          "image_url": "https://popculturereferences.com/was-a-playboy-centerfold-really-the-standard-test-image-for-image-processing-algorithms/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSaE5UYy7vEaRmUoy0v75dne3wMdBv7fIv1qepRVuraSkID4YY9",
+          "metadata": {
+            "position": 27,
+            "source": "Pop Culture References",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcSYeTQmZJ0G4xBiIrm2oRHOkrd1k-AsT3CQjxP0WPgPwwTNYG2d_a8G7-m7AR8NacYVB4uyBC43uRukdCsS_eQVNldFjqgouvP-Halg9uSiehrk0BYkA28rJwzWrW8"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Goodbye, Lenna. Scientists were banned from using the ...",
+          "url": "https://itc.ua/en/news/goodbye-lenna-scientists-were-banned-from-using-the-legendary-1972-playboy-photo-to-illustrate-articles/",
+          "domain": "itc.ua",
+          "platform": "",
+          "snippet": "ITC.ua",
+          "image_url": "https://itc.ua/en/news/goodbye-lenna-scientists-were-banned-from-using-the-legendary-1972-playboy-photo-to-illustrate-articles/",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHlTeyyTD5_7Uhn3F48nZu3ZVZG-PvCYL1qoeL1ygEO8Noso40",
+          "metadata": {
+            "position": 28,
+            "source": "ITC.ua",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTRdRzj0cOS2zoKUBnvwH3LONmzmqDytu_4Z6u3FiMhfp7FCuz1ie4Qv2udbvojZ_SbhoXqhMNMMmjT2Et0twna9Z9SEgzu7smhWYk"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Delaunay Painter",
+          "url": "https://mrdoob.com/lab/javascript/delaunay/painter/",
+          "domain": "mrdoob.com",
+          "platform": "",
+          "snippet": "Mr.doob",
+          "image_url": "https://mrdoob.com/lab/javascript/delaunay/painter/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQdRyzDzu9OLTY4VpIWNPLKjEOxNl4ndQnBFi5vp7B04T5RCvCR",
+          "metadata": {
+            "position": 29,
+            "source": "Mr.doob",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcSoW4AGULTADOOhYJUkM_GQkImD7ghwOTBoHH2GAZGFFQiUsntG4_h1kdhUUdcYggpG_f6yQMripywep7IEc7wd5mqdgrBE7Ej9ii4E1txg"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "GC - Blue Scratches - Image no. 15",
+          "url": "https://www.na.icar.cnr.it/~maddalena.l/DFRLab/GC06BlueScratches15.html",
+          "domain": "na.icar.cnr.it",
+          "platform": "",
+          "snippet": "ICAR CNR",
+          "image_url": "https://www.na.icar.cnr.it/~maddalena.l/DFRLab/GC06BlueScratches15.html",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBw2YiRMrF8obhTNOQamobUbCPYQfH9phEKFwrx885rzFcJ3GD",
+          "metadata": {
+            "position": 30,
+            "source": "ICAR CNR",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcSpGj6bh4eFzxUq0PpWRvTbb8sucHdmdMhHNhZ738nUQ7heParX8WTkgyj3OkMoFviLtTqMF_ayZn6R17XD4ULuYYzHz-_lDZivBq8kAlet0mohwIA6M6E"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Image Processing",
+          "url": "https://johnloomis.org/ece563/notes/introduction/lenna/lenna.html",
+          "domain": "johnloomis.org",
+          "platform": "",
+          "snippet": "John Loomis",
+          "image_url": "https://johnloomis.org/ece563/notes/introduction/lenna/lenna.html",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvrI9pnJWYeU84aqSK_37hpgrH0ll34Ghz2vUznbE52RyOP6gM",
+          "metadata": {
+            "position": 31,
+            "source": "John Loomis",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcSYsXzzD5qplSZ_z9h0olUIJto2mBToXnnW0pwxJnJ2uD4MGrZX_tP3g3GGCmYYYfEW2CJbnrL9eM_mKTkZ3JSqK4qLdIGJ5WrqV8hwMZDqOqRx5Q"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Massive speedup - Mosaic #6 - by Ivan Rogoz - Barn Lab",
+          "url": "https://warped3.substack.com/p/massive-speedup-mosaic-6",
+          "domain": "warped3.substack.com",
+          "platform": "",
+          "snippet": "Barn Lab - Substack",
+          "image_url": "https://warped3.substack.com/p/massive-speedup-mosaic-6",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSDloYFHQ6707k7imSmghDBh-rJrrXFsBrMs2XSfOJdTRoEaOmX",
+          "metadata": {
+            "position": 32,
+            "source": "Barn Lab - Substack",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcSGl7I9TcKIUVDJt2LuyM-m7-NftMEzUQ0lSXGV0LKwwfbiAmvjsd-E2R30qGSEd7UK_QS07fqx2a-lSb0N8isQoQhseugpJx1arn7HAURRJR29exC-7hp06w"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Fast Blur (Box Blur with accumulator) | Mattias Fagerlund's ...",
+          "url": "https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/",
+          "domain": "lotsacode.wordpress.com",
+          "platform": "",
+          "snippet": "Mattias Fagerlund's Coding Blog - WordPress.com",
+          "image_url": "https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSu7Buiu8J_V1_2O4kJTGaeO1oMui_rpPPfTsOqJMkwTsCUGfFc",
+          "metadata": {
+            "position": 33,
+            "source": "Mattias Fagerlund's Coding Blog - WordPress.com",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTWCDeMxE8ZXyXdxacklVVZxghxeCTkS8kICaqH6IUmMAhjuM_kHNNr-3mADHmFSVop5RJ0OsC7JQdLxbK9605NONR8ek5gwRD3QaSyZMyd3LshP9CUA70o6EK0YA"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena S\u00f6derberg ~ Detailed Biography with [ Photos | Videos ]",
+          "url": "https://alchetron.com/Lena-S\u00f6derberg",
+          "domain": "alchetron.com",
+          "platform": "",
+          "snippet": "Alchetron",
+          "image_url": "https://alchetron.com/Lena-S\u00f6derberg",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQsnRytP-VzeA_VxDHKUZ3FCL7RQ_iFjp51D274PLy8mQjeWNx5",
+          "metadata": {
+            "position": 34,
+            "source": "Alchetron",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTKrRmnHgynoPmU-sahWscnqeFmNzE87rb2Pwh_p0GXG_569KbyALg7PBRGB8M5z15iA-VeU4ZG3ZWT-r_3jZWUBH-h01V6ZHd4YTVlVl4f-TGu"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena.js, a Library for image processing by Davidson Fellipe",
+          "url": "https://fellipe.com/demos/lena-js/",
+          "domain": "fellipe.com",
+          "platform": "",
+          "snippet": "Davidson Fellipe",
+          "image_url": "https://fellipe.com/demos/lena-js/",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcoDZZynsBMWkcVXbHP-JVOtzC4qLKnNWSVPrOtGoUZp2HUy3H",
+          "metadata": {
+            "position": 35,
+            "source": "Davidson Fellipe",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcSNAf-C2-WVKPuGAYhv0gvm_gV5DdVuX5ShCEX_-8hkg2rWkP_ORhVQe5y3my5Z4gP32FNpJd5NwqCS_cCfs9jAemOGZlNgKD_LiptpJU6KeQ"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Types of Financial Aid | Alabama State University",
+          "url": "https://www.alasu.edu/financial-aid/types-of-aid/index.php",
+          "domain": "alasu.edu",
+          "platform": "",
+          "snippet": "Alabama State University",
+          "image_url": "https://www.alasu.edu/financial-aid/types-of-aid/index.php",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMtv29XDmGTCHAzeR0FBAiaH74vMNBD7cYqWupKZyCq_Wq6zBG",
+          "metadata": {
+            "position": 36,
+            "source": "Alabama State University",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcQa3QOKUhv7dQCT9A0F-gVABoQEqgZj0CJeq0AqCBnlDbT137qUoyNkQJD6gNJbT7hWMdipShf-Af_gac6Vcv19ioA2ojD_Gjied0EcXNhXpkjR"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Episode 2: Multimedia I/O | nvidia-jetson-opencv-101",
+          "url": "https://darienmt.com/nvidia-jetson-opencv-101/2-cv-io/",
+          "domain": "darienmt.com",
+          "platform": "",
+          "snippet": "darienmt.com",
+          "image_url": "https://darienmt.com/nvidia-jetson-opencv-101/2-cv-io/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQf_S5RyJbnbh3FN_Saz5HIjzRl3Mtv8Iq2oWKYJJBuiOny49aa",
+          "metadata": {
+            "position": 37,
+            "source": "darienmt.com",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcQvEHkle2OQqB21RR_dhIn7nYgWgJp-hz0cHTG5X1uv6g_kMt3f7FaaD9QFiCBhvuG-6fTVuy44R1RReNEFfcW2Eiw1Rjv8mDXPUueFYpbIiB8"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Proposed Cover image called Lena. | Download Scientific Diagram",
+          "url": "https://www.researchgate.net/figure/Figure-6-Proposed-Cover-image-called-Lena_fig5_381409395",
+          "domain": "researchgate.net",
+          "platform": "",
+          "snippet": "ResearchGate",
+          "image_url": "https://www.researchgate.net/figure/Figure-6-Proposed-Cover-image-called-Lena_fig5_381409395",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRM39D-SqHTZ5QF8bT3L6FPOg18mZAeP04Ez0mUrmO1YlyxO9BA",
+          "metadata": {
+            "position": 38,
+            "source": "ResearchGate",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcQayCGz2Ruota-8385pa0qrFkxAsul6va_TIR6tOOvlQp0Raxm8JHo6z7ypM6q0TEb9FoceHIKAdn_n5j-FhaES6TTHA52D9KRDSkoW-UAoDKSzDI1Qzjq_Ow"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "JPEG 2000 on Cuda",
+          "url": "https://cuj2k.sourceforge.net/jpeg.html",
+          "domain": "cuj2k.sourceforge.net",
+          "platform": "",
+          "snippet": "JPEG 2000 on Cuda - SourceForge",
+          "image_url": "https://cuj2k.sourceforge.net/jpeg.html",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRQw6EAJ6ga0HbhNOfJsvKXz7jgQeg8D__UfJ9nI_8VWzAL8QxP",
+          "metadata": {
+            "position": 39,
+            "source": "JPEG 2000 on Cuda - SourceForge",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcRWwR0Hjdfzz9RsSDZMSqYM2D_B6OFzUJjmtL0WynpN5DExuAstk45hRk880Gk-DxlPUtKuTvG2q8jcktNgexdak-VlhSea_3h0QWs3U0kbcCbfq-I-KWYvNaE"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Grafika",
+          "url": "https://kosinix.github.io/grafika/filters/Dither.html",
+          "domain": "kosinix.github.io",
+          "platform": "",
+          "snippet": "Nico Amarilla",
+          "image_url": "https://kosinix.github.io/grafika/filters/Dither.html",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcjfdFI4Llmht_Tje73Mz_ACcMq626vikE_Fp3fofL9-oG2Du",
+          "metadata": {
+            "position": 40,
+            "source": "Nico Amarilla",
+            "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcSkcwFvvyejzIvaSj_ecB-CKlKFZn2tkCNuPlj05qqZRyxSxJQD73NPuWLy7pKHvSYZaMS29Y9BWTxAEUsX6LlHzJ52SQ0eUjWYn_JXjZahtCHnhELxDQ"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lenna - Wikiwand",
+          "url": "https://www.wikiwand.com/en/Lenna",
+          "domain": "wikiwand.com",
+          "platform": "",
+          "snippet": "Wikiwand",
+          "image_url": "https://www.wikiwand.com/en/Lenna",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQDaupjU2qWJ2omu47nUeqdNZnBYB8FXRhuyRouysCtQQHeggt7",
+          "metadata": {
+            "position": 42,
+            "source": "Wikiwand",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcQCiJRFvbkU5fmig8qF7vPQ8dAui3KZhZmL86jcZ2GelO6jBulCXBRk3aux9Cu9r3407puJis8JuE5NDMbLkfinjFlYWrJnrNAtNg6WSXO6pnJhTOQB"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "November | 2013 | Cubehero Blog",
+          "url": "https://cubehero.com/2013/11/",
+          "domain": "cubehero.com",
+          "platform": "",
+          "snippet": "Cubehero Blog",
+          "image_url": "https://cubehero.com/2013/11/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRHX9wC47jXwCWN2pjZQnXi-mkPOMUm_VSaSQnuTKBztcE6kX_n",
+          "metadata": {
+            "position": 43,
+            "source": "Cubehero Blog",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcTiVW2Uo2GGlZNyV2N8JY6C9iFINPcALJR5yGErslTX0PI8PzaY95SNrz-kayCF3xZ07QuO02gWjmpQeKiru9Df66eeo70JtTQtfFmhOaUfUx0"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "ffglitch jpeg dc coefficients | techne gratia artis",
+          "url": "http://blog.arrozcru.org/?p=346",
+          "domain": "blog.arrozcru.org",
+          "platform": "",
+          "snippet": "techne gratia artis",
+          "image_url": "http://blog.arrozcru.org/?p=346",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34mKKFZhx7vNQBt0Bc19l3TscQzGTv6m_X6m6fHnBbj-rrLrF",
+          "metadata": {
+            "position": 44,
+            "source": "techne gratia artis",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcRccRn7MC84jOXa2hKDtgBfile8FOrXruuOX0hcjVtOsmskL12jLtkf33yaADqo8DZ5EvjvSpSkaWiKZa6-yyfZpLXDaNmST5TaZIpMDV_4zEgaTznH"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Pseudo OpenCV",
+          "url": "https://pseudopencv.site/utilities/clahe/",
+          "domain": "pseudopencv.site",
+          "platform": "",
+          "snippet": "Pseudo OpenCV",
+          "image_url": "https://pseudopencv.site/utilities/clahe/",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSoIh_8hOBTPHTpRz2TfuqWXuuXvQiMHw4k4CDARLUru_mTnjOA",
+          "metadata": {
+            "position": 45,
+            "source": "Pseudo OpenCV",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcS_i0gcvgIwsPD8yClXCn_2hEG7raJ7XrHMgldavmfaa4-GyxyzitvAN3cNZjPGFJNVehugpi6KhHI2gF04RMw4DYqFbsQAOE6yBa---YY2rvwESHYM"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Sistronic",
+          "url": "https://sistronic.se/",
+          "domain": "sistronic.se",
+          "platform": "",
+          "snippet": "sistronic.se",
+          "image_url": "https://sistronic.se/",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQc4b4RWBIzwc-v2CcXJqBebov8dxzNDxmURgZlhd5VNbhM54DX",
+          "metadata": {
+            "position": 46,
+            "source": "sistronic.se",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcST-vIrfo_hWBz3KSEz79AZ1xwCutW8MOLWcYGcrsPgVM92gm9LfA4q8eY5QgXcee2wd8I0_kwGwQ_L1ohvVQNFyjXJ9Jr50FMfopWZMN_Q0ms"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena S\u00f6derberg, Jennifer Knoll & Jennifer Lopez\u201d by Marie ...",
+          "url": "https://jeudepaume.org/en/mediateque/magazine-lena-soderberg-jennifer-knoll-jennifer-lopez-by-marie-lechner-en/",
+          "domain": "jeudepaume.org",
+          "platform": "",
+          "snippet": "Jeu de Paume",
+          "image_url": "https://jeudepaume.org/en/mediateque/magazine-lena-soderberg-jennifer-knoll-jennifer-lopez-by-marie-lechner-en/",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiXQtzrV-axmBymB-Pbik5dZ6WiF5JuPQrgq-XuKJAX_CJ-F0U",
+          "metadata": {
+            "position": 48,
+            "source": "Jeu de Paume",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcRpDcafcBSKofzGQ7Pvjc6V-gsCDG_750NolVcfRq_ygULCcgp-EQchuSW0t3_7PggwNo05F7BCv-3CSAmItEW48DIVyH1vDJ_UBcQHLl6KqDqEWw"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Untitled Document",
+          "url": "http://jstarck.free.fr/lena_fig_col.html",
+          "domain": "jstarck.free.fr",
+          "platform": "",
+          "snippet": "jstarck.free.fr",
+          "image_url": "http://jstarck.free.fr/lena_fig_col.html",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ4060rC18VQ53L_KG9TzsMgSkQ2naq_49P5Jqzw8MkdQCS_DCh",
+          "metadata": {
+            "position": 49,
+            "source": "jstarck.free.fr",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcQUro1LrdPpnf-XXUCOrDSIcurnKK4AHjcJQXchJ-wx2fDKwJKiYkWdY6eiaB1ZN29S__6ED4_sch5aXhBV8h-fwp3Hw--zgrJ3BZVWEQ6PyiAXlA"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "\u041a\u0442\u043e \u0442\u0430\u043a\u0430\u044f \u041b\u0435\u043d\u0430?",
+          "url": "https://htrd.su/blog/2008/02/17/2008-02-17_21.36_kto_takaja_lena/",
+          "domain": "htrd.su",
+          "platform": "",
+          "snippet": "Hatred's Log Place",
+          "image_url": "https://htrd.su/blog/2008/02/17/2008-02-17_21.36_kto_takaja_lena/",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZU-wuFBJ85m55fG8weAPjmJAQT56aG0pM8Y9ufnNQlFMvICe",
+          "metadata": {
+            "position": 50,
+            "source": "Hatred's Log Place",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcSnALAzmdONLTxH20KOcARcPjlTLioLDo6Hcb5ymG5k1n9lU7vp1zQBG2oh3bMZbmaTpgI7qSMJ1OhHwLqaKYnbVwl0NnMgnFjgl55p"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Computer Generated Love Stories from Images: 6ven.com ...",
+          "url": "https://asselin.engineer/6ven",
+          "domain": "asselin.engineer",
+          "platform": "",
+          "snippet": "Asselin.Engineer",
+          "image_url": "https://asselin.engineer/6ven",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbzxLNVRiEr__eXQu_j5CwE4JzVKQcZu5DJG7wdepsajlu4Jvm",
+          "metadata": {
+            "position": 51,
+            "source": "Asselin.Engineer",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcTGPuxdei8IBYmRZavHzwYVBopmWGTWjwrOBfUxyWBq9bHuVtHb03BbtwAnOtYQRny6eZ-qGNnyhTJepvXOi4dUTm62ULtT-4L0xLqXWpYt42qLQfQm"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Applying Delaunay Triangulation on RGB channels instead of ...",
+          "url": "https://stackoverflow.com/questions/68518626/applying-delaunay-triangulation-on-rgb-channels-instead-of-final-image",
+          "domain": "stackoverflow.com",
+          "platform": "",
+          "snippet": "Stack Overflow",
+          "image_url": "https://stackoverflow.com/questions/68518626/applying-delaunay-triangulation-on-rgb-channels-instead-of-final-image",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQpArNPqDih7ifIVVw0wEWNs284b_wkNo54FgjN8y8WJ6SJ_dc9",
+          "metadata": {
+            "position": 52,
+            "source": "Stack Overflow",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcR0gXehAVbPly4EnNN61QR8tuUjNKGH_aWOHCnwvIBBgy-ZtGlbNwD8vGdxqtHgFltjPbLgnzcOitcJNcVH9w68qmFrGYvS8XtGAddNi65VuED0ergujg"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "How to do a \"random\" image partition based on seeding points ...",
+          "url": "https://mathematica.stackexchange.com/questions/241275/how-to-do-a-random-image-partition-based-on-seeding-points",
+          "domain": "mathematica.stackexchange.com",
+          "platform": "",
+          "snippet": "Mathematica Stack Exchange",
+          "image_url": "https://mathematica.stackexchange.com/questions/241275/how-to-do-a-random-image-partition-based-on-seeding-points",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWONEVaNZv5567S6CtC4R_WpRbSh80zDOkV_gsBMD5bd_Z9DzP",
+          "metadata": {
+            "position": 54,
+            "source": "Mathematica Stack Exchange",
+            "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn:ANd9GcRxMfsMKfDuR_FplJHINXQxO0HSQhRhApP3fo213M4mFsXOIaYt0_g9FFlb3RKaBm_pCj3kZIUblbW7Xyp8vqIz76MhI8JIVYCuqfTe0Q827ZidD288brDi_OWhFLu_5NwaeA"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena \u2013 Eric Brown",
+          "url": "https://ericcbrown.com/2026/01/17/lena/",
+          "domain": "ericcbrown.com",
+          "platform": "",
+          "snippet": "Eric Brown",
+          "image_url": "https://ericcbrown.com/2026/01/17/lena/",
+          "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8yDMFHEDhIPItavzlP4VVHiD9l56QWjAOdHMhZqSs3gM_4UEe",
+          "metadata": {
+            "position": 55,
+            "source": "Eric Brown",
+            "source_icon": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn:ANd9GcQkrV5nHSqBBvhGxmEMUzrME9LQnA8PDNYlDsL-mtoyUQcPUlq8sEdmzyTajKTJNhpZj57MzaTaQfuU-YGwIYBVgLYMWVgbrY8X-8xSjLnQzvYREg"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Funvision opencv C++ tutorials: OpenCV ROI Guide: Extract ...",
+          "url": "https://www.funvisiontutorials.com/2015/12/basic-opencv-3-mat-tutorial-part-2-roi.html",
+          "domain": "funvisiontutorials.com",
+          "platform": "",
+          "snippet": "Funvision opencv C++ tutorials",
+          "image_url": "https://www.funvisiontutorials.com/2015/12/basic-opencv-3-mat-tutorial-part-2-roi.html",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6sPTe8ejpdwfP-WA7O6gUnsp9uIA3WmyaSvDaCykoBQqA8W_i",
+          "metadata": {
+            "position": 57,
+            "source": "Funvision opencv C++ tutorials",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcTIxxo-CYtL2aeJe_eQUQ7fHcEHQFAMEDSQjvBMMiETrlR61j9JcQMwS_uZJQ0BUpyuKx-1tqQyWv0hd3qw474oYu5HHoMSvBfaw-O1rg8DvGt0leqR3oxDQxA0HuW7gw"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Lena Soderberg: The Playboy model at the centrefold of ...",
+          "url": "https://www.smh.com.au/technology/lena-soderberg-the-playboy-model-at-the-centrefold-of-computer-science-20150511-ggyien.html",
+          "domain": "smh.com.au",
+          "platform": "",
+          "snippet": "The Sydney Morning Herald",
+          "image_url": "https://www.smh.com.au/technology/lena-soderberg-the-playboy-model-at-the-centrefold-of-computer-science-20150511-ggyien.html",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQFv-lK3bvOaTx4OCRzV5XziJ1884Ob8t8RxkbfxYT-cnm56Nrh",
+          "metadata": {
+            "position": 58,
+            "source": "The Sydney Morning Herald",
+            "source_icon": "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcQztx7JxHxwnI4zipuPQTAYU4EmQESmXAhNh8dKifomGfbkCO4wA5vVAnjp18G0M8bCRjz0maVsDb6VOy98FVLxQB_wSw6T6OQ3m49C22Sf89_fhw"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "title": "Color reproduction examples",
+          "url": "https://cgg.mff.cuni.cz/~pepca/lectures/examples/colorrep/",
+          "domain": "cgg.mff.cuni.cz",
+          "platform": "",
+          "snippet": "cgg.mff.cuni.cz",
+          "image_url": "https://cgg.mff.cuni.cz/~pepca/lectures/examples/colorrep/",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR5HDRjdfkoFyJ-Ck5_CpM4-r5yFUlnzaLNPNT479idL-w96Ads",
+          "metadata": {
+            "position": 59,
+            "source": "cgg.mff.cuni.cz",
+            "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn:ANd9GcTaU7C_-TzeszPOzBwWvcSKOMwruXT9b6VWnHVsWgFhiGVLIiDL79qc2qZCI90rUyEtK9RCsLup5JxiwuHqRqKxnWMRsMaKSuOK48_Dix4lrasu824"
+          },
+          "similarity": null,
+          "match_reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        }
+      ],
+      "selected_result": {
+        "title": "TIL that in Computer Science a famous standard test image, a ...",
+        "url": "https://www.reddit.com/r/todayilearned/comments/dpdg5b/til_that_in_computer_science_a_famous_standard/",
+        "domain": "reddit.com",
+        "platform": "reddit.com",
+        "snippet": "Reddit",
+        "image_url": "https://www.reddit.com/r/todayilearned/comments/dpdg5b/til_that_in_computer_science_a_famous_standard/",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRlLJXmy_Vl7zRTcrpHBZmVq1gdDiSBk5pZb8uIEMdbJ8RPavOo",
+        "metadata": {
+          "position": 1,
+          "source": "Reddit",
+          "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAh1BMVEVHcEz_RQD_RgD_RQD_RQD_RQD_RAD_RQD_RQD_RQD-____RQD_NwD_PQD_QQDw9vj3_P3i7O_M2eD07-z6fFvQ4OcBBAb_Ug30uKz408n7Zjr7jnLa5Ojcj4T5cEzYop7Qz9HDycv0nYrLQiXpWzwZJChaNitkZWaiLgTvGwCIfHuOW01HcEyTqjndAAAALXRSTlMAyU9SiuIMIvWe_____________________________________________wAEJt9nAAABrUlEQVQ4jYVTWXaDMAyEpKyyvBA7Zg9kb3v_-1U2JYG2eZ0fY8_YEtIoCB6It1mYAqRhto2D30gyIh_Ikp_8G_zA2_p6tCKRMQ7R4pEkXfGsqaoaIU1e8HjMCZY_Fev3-f2mSHBEgOiv_E6X64eSUjrBlGmyzv5y4rpVquB-54Jky-f5_co51ofOToKM6ucJpD1naPX1U1vGGHJ_BGkcbN1_Wa2B9eUu99iVPQNNQqI2LgJrBJ1W-QIVaUXDXIwQUOcvoBHCIAVWvRJUDNIAHoLDYSbmLxKAE5RCyjzv3uvv8-6972iRonSCFHhtSCFOUJ8nwRnqkyDe1NQPShKwb0lxtrb_zs3aMxW77anaoS8kBRGy0s1ch0ZXUvgA9JuuUNiIHUmkKoZxHArXKyFEg75QMZmBg1FKCXHZe1yIVaoFV-t4ahZq07ZKjJNgdHSrcWrW1G7sTFEYNd72-9uoWlOYDud2T4ZheigKp1HGrYNmC2t7y6E9DsaTxgxH6-9HK9NyhLopCU0N3gsLW8-m4jQQzizT7sn_miqP6B_-OXqbP9g0ez13bvw3i_H_Asr5MBnHLL6RAAAAAElFTkSuQmCC.png"
+        },
+        "similarity": null,
+        "match_reason": "could not decode or encode image: FaceDetectionError"
+      },
+      "search_time_ms": 5213.6
+    },
+    "matching": {
+      "status": "no_confident_match",
+      "threshold": 0.4,
+      "candidates": [
+        {
+          "position": 0,
+          "url": "https://www.reddit.com/r/todayilearned/comments/dpdg5b/til_that_in_computer_science_a_famous_standard/",
+          "domain": "reddit.com",
+          "image_source": "image_url",
+          "image_sha256": "b731ac2f8070e8ff561b34139548992b6f7d8461f72a892db47dd27ebb3f977e",
+          "image_bytes": 8476,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 1,
+          "url": "https://www.reddit.com/r/computervision/comments/1q7hizl/oh_how_far_weve_come/",
+          "domain": "reddit.com",
+          "image_source": "image_url",
+          "image_sha256": "8853e07af04f3211f5a8122811d8e4a836dcd60afa4bae5180f85c619a74153d",
+          "image_bytes": 8452,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 2,
+          "url": "https://x.com/ZoidCTF/status/1414325266298540040",
+          "domain": "x.com",
+          "image_source": "image_url",
+          "image_sha256": "24c4b74dd7d291eb90eabb8d7df065508f7720c99817649a6da81c836627a824",
+          "image_bytes": 195050,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 3,
+          "url": "https://www.reddit.com/r/programming/comments/dobz8s/lenajpg_now/",
+          "domain": "reddit.com",
+          "image_source": "image_url",
+          "image_sha256": "58a2914d975d88ead0cb3547265a08dd5b32462d78f6e7f9a0de0c4984094b9a",
+          "image_bytes": 8439,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 4,
+          "url": "https://www.linkedin.com/posts/desampson_lenna-wikipedia-activity-7176451529174913024-1wD8",
+          "domain": "linkedin.com",
+          "image_source": "image_url",
+          "image_sha256": "d006a395695a790de29ef3488e25a3946b8b6430e70a0ab5bedede7580ef68da",
+          "image_bytes": 150110,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 5,
+          "url": "https://medium.com/@mskhan_82062/image-processing-in-java-8c98c1ee7b30",
+          "domain": "medium.com",
+          "image_source": "image_url",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "download failed: HTTP 403"
+        },
+        {
+          "position": 6,
+          "url": "https://www.reddit.com/r/Python/comments/4rkgs8/wavelet_image_hash_in_python/",
+          "domain": "reddit.com",
+          "image_source": "image_url",
+          "image_sha256": "90fdfe2189d95c18a5d75013c7069b5aff50acd9e98f15fcc789c05461afe332",
+          "image_bytes": 8451,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 7,
+          "url": "https://www.linkedin.com/posts/tacertain_somehow-at-some-point-it-became-taboo-activity-7201434494376042496-A_ah",
+          "domain": "linkedin.com",
+          "image_source": "image_url",
+          "image_sha256": "454efefa87d4ee8a5727f26718d5cc07411d5a24770a85cf2ab1290da40fc754",
+          "image_bytes": 140503,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 8,
+          "url": "https://ru.wikipedia.org/wiki/\u041b\u0435\u043d\u0430_(\u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435)",
+          "domain": "ru.wikipedia.org",
+          "image_source": "image_url",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "download failed: HTTP 403"
+        },
+        {
+          "position": 9,
+          "url": "https://patugarte.github.io/cinnema-magazine/",
+          "domain": "patugarte.github.io",
+          "image_source": "image_url",
+          "image_sha256": "ffefff22e4bab1d962f2777e120450f6df7ea39d77cdf1370b933a0afed90fd3",
+          "image_bytes": 4796,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 10,
+          "url": "https://www.researchgate.net/figure/The-sample-images-that-used-to-test-the-proposed-steganography-method-for-a-Lena-b_fig1_339540037",
+          "domain": "researchgate.net",
+          "image_source": "image_url",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "download failed: HTTP 403"
+        },
+        {
+          "position": 11,
+          "url": "https://phys.org/news/2015-05-playboy-centrefold-centre-science.html",
+          "domain": "phys.org",
+          "image_source": "image_url",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "download failed: HTTP 400"
+        },
+        {
+          "position": 12,
+          "url": "https://www.jpchacha.com/blog/index.php?id=2",
+          "domain": "jpchacha.com",
+          "image_source": "image_url",
+          "image_sha256": "d1579a866c98bb8e8ae7ebe760c5e3f1442e9f6d7a28437d54cc5b2e82d57521",
+          "image_bytes": 22066,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 13,
+          "url": "https://the.me/the-story-of-lena/",
+          "domain": "the.me",
+          "image_source": "image_url",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "download failed: HTTP 403"
+        },
+        {
+          "position": 14,
+          "url": "https://helios2.mi.parisdescartes.fr/~jdelon/demos/artefact_removal_html/Lena-Barbara.html",
+          "domain": "helios2.mi.parisdescartes.fr",
+          "image_source": "image_url",
+          "image_sha256": "31c072ebc90c5db85bcb553fc9a41cdb5869405b2cb43d12c1af142827504ea4",
+          "image_bytes": 3547,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "could not decode or encode image: FaceDetectionError"
+        },
+        {
+          "position": 15,
+          "url": "https://onezero.medium.com/a-nude-playboy-photo-has-been-a-mainstay-in-testing-tech-for-decades-b8cdb434dce1",
+          "domain": "onezero.medium.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 16,
+          "url": "https://www.researchgate.net/figure/a-original-Lena-image-512x512-b-15-of-the-pixels-of-te-input-image-randomly-chosen_fig3_2548793",
+          "domain": "researchgate.net",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 17,
+          "url": "http://www.lenna.org/",
+          "domain": "lenna.org",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 18,
+          "url": "https://kevinrye.net/index_files/1972_playboy_magazine_the_lenna_edition.php",
+          "domain": "kevinrye.net",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 19,
+          "url": "https://thephotographersgallery.org.uk/whats-on/sebastian-schmieg-search-image-live-lenafabio",
+          "domain": "thephotographersgallery.org.uk",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 20,
+          "url": "https://cpp0x.pl/kursy/Kurs-OpenGL-C++/Mapy-pikselowe/224",
+          "domain": "cpp0x.pl",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 21,
+          "url": "https://interestingengineering.com/culture/bye-lenna-iconic-playboy-pic-banned-from-research-papers",
+          "domain": "interestingengineering.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 22,
+          "url": "https://tomroelandts.com/articles/lena",
+          "domain": "tomroelandts.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 23,
+          "url": "https://www.rts.ch/audio-podcast/2019/audio/la-chronique-binaire-lena-la-1ere-dame-du-web-25088943.html",
+          "domain": "rts.ch",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 24,
+          "url": "https://www.artsy.net/article/addicted-art-gallery-lena-sjooblom-first-lady-internet",
+          "domain": "artsy.net",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 25,
+          "url": "https://www.addictedgallery.com/Blog/lena-sjblom-the-first-lady-of-the-internet/",
+          "domain": "addictedgallery.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 26,
+          "url": "https://bellard.org/bpg/lena.html",
+          "domain": "bellard.org",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 27,
+          "url": "https://marvinproject.net/en/plugins/susan.html",
+          "domain": "marvinproject.net",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 28,
+          "url": "https://uk.wikipedia.org/wiki/\u041b\u0435\u043d\u0430_(\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u043d\u044f)",
+          "domain": "uk.wikipedia.org",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 29,
+          "url": "https://hotnessrater.com/person/62792/lena-soderberg",
+          "domain": "hotnessrater.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 30,
+          "url": "https://popculturereferences.com/was-a-playboy-centerfold-really-the-standard-test-image-for-image-processing-algorithms/",
+          "domain": "popculturereferences.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 31,
+          "url": "https://itc.ua/en/news/goodbye-lenna-scientists-were-banned-from-using-the-legendary-1972-playboy-photo-to-illustrate-articles/",
+          "domain": "itc.ua",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 32,
+          "url": "https://mrdoob.com/lab/javascript/delaunay/painter/",
+          "domain": "mrdoob.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 33,
+          "url": "https://www.na.icar.cnr.it/~maddalena.l/DFRLab/GC06BlueScratches15.html",
+          "domain": "na.icar.cnr.it",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 34,
+          "url": "https://johnloomis.org/ece563/notes/introduction/lenna/lenna.html",
+          "domain": "johnloomis.org",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 35,
+          "url": "https://warped3.substack.com/p/massive-speedup-mosaic-6",
+          "domain": "warped3.substack.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 36,
+          "url": "https://lotsacode.wordpress.com/2010/12/08/fast-blur-box-blur-with-accumulator/",
+          "domain": "lotsacode.wordpress.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 37,
+          "url": "https://alchetron.com/Lena-S\u00f6derberg",
+          "domain": "alchetron.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 38,
+          "url": "https://fellipe.com/demos/lena-js/",
+          "domain": "fellipe.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 39,
+          "url": "https://www.alasu.edu/financial-aid/types-of-aid/index.php",
+          "domain": "alasu.edu",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 40,
+          "url": "https://darienmt.com/nvidia-jetson-opencv-101/2-cv-io/",
+          "domain": "darienmt.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 41,
+          "url": "https://www.researchgate.net/figure/Figure-6-Proposed-Cover-image-called-Lena_fig5_381409395",
+          "domain": "researchgate.net",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 42,
+          "url": "https://cuj2k.sourceforge.net/jpeg.html",
+          "domain": "cuj2k.sourceforge.net",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 43,
+          "url": "https://kosinix.github.io/grafika/filters/Dither.html",
+          "domain": "kosinix.github.io",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 44,
+          "url": "https://www.wikiwand.com/en/Lenna",
+          "domain": "wikiwand.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 45,
+          "url": "https://cubehero.com/2013/11/",
+          "domain": "cubehero.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 46,
+          "url": "http://blog.arrozcru.org/?p=346",
+          "domain": "blog.arrozcru.org",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 47,
+          "url": "https://pseudopencv.site/utilities/clahe/",
+          "domain": "pseudopencv.site",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 48,
+          "url": "https://sistronic.se/",
+          "domain": "sistronic.se",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 49,
+          "url": "https://jeudepaume.org/en/mediateque/magazine-lena-soderberg-jennifer-knoll-jennifer-lopez-by-marie-lechner-en/",
+          "domain": "jeudepaume.org",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 50,
+          "url": "http://jstarck.free.fr/lena_fig_col.html",
+          "domain": "jstarck.free.fr",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 51,
+          "url": "https://htrd.su/blog/2008/02/17/2008-02-17_21.36_kto_takaja_lena/",
+          "domain": "htrd.su",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 52,
+          "url": "https://asselin.engineer/6ven",
+          "domain": "asselin.engineer",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 53,
+          "url": "https://stackoverflow.com/questions/68518626/applying-delaunay-triangulation-on-rgb-channels-instead-of-final-image",
+          "domain": "stackoverflow.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 54,
+          "url": "https://mathematica.stackexchange.com/questions/241275/how-to-do-a-random-image-partition-based-on-seeding-points",
+          "domain": "mathematica.stackexchange.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 55,
+          "url": "https://ericcbrown.com/2026/01/17/lena/",
+          "domain": "ericcbrown.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 56,
+          "url": "https://www.funvisiontutorials.com/2015/12/basic-opencv-3-mat-tutorial-part-2-roi.html",
+          "domain": "funvisiontutorials.com",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 57,
+          "url": "https://www.smh.com.au/technology/lena-soderberg-the-playboy-model-at-the-centrefold-of-computer-science-20150511-ggyien.html",
+          "domain": "smh.com.au",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        },
+        {
+          "position": 58,
+          "url": "https://cgg.mff.cuni.cz/~pepca/lectures/examples/colorrep/",
+          "domain": "cgg.mff.cuni.cz",
+          "image_source": "",
+          "image_sha256": "",
+          "image_bytes": 0,
+          "faces_detected": 0,
+          "similarity": null,
+          "decision": "skipped",
+          "reason": "not evaluated: beyond MATCH_MAX_CANDIDATES=15"
+        }
+      ],
+      "selected_position": null,
+      "best_similarity": null,
+      "matched_image_sha256": "",
+      "audit_bundle_sha256": "e1039752e6360e73142a4b85580d5036b7107be58549e887f6264c32930a2352",
+      "candidates_total": 59,
+      "candidates_scored": 0,
+      "candidates_skipped": 59,
+      "matching_time_ms": 2855.7
+    },
+    "fingerprint": {
+      "algorithm": "SHA-256",
+      "value": "",
+      "canonical_data": {}
+    },
+    "blockchain": {
+      "network": "",
+      "record_id": "",
+      "transaction_hash": "",
+      "block_number": 0,
+      "fingerprint": "",
+      "source_url": "",
+      "timestamp": 0,
+      "submitter": "",
+      "explorer_url": "",
+      "submission_time_ms": 0.0
+    },
+    "on_chain_record": {
+      "network": "",
+      "record_id": "",
+      "transaction_hash": "",
+      "block_number": 0,
+      "fingerprint": "",
+      "source_url": "",
+      "timestamp": 0,
+      "submitter": "",
+      "explorer_url": "",
+      "submission_time_ms": 0.0
+    },
+    "verification": {
+      "verified": false,
+      "status": "PENDING",
+      "local_fingerprint": "",
+      "on_chain_fingerprint": "",
+      "record_id": "",
+      "transaction_hash": "",
+      "verification_time_ms": 0.0
+    },
+    "total_time_ms": 12190.2,
+    "error": "No confident match: none of 59 candidates yielded a usable face image to compare against."
+  },
+  "error": null
+}

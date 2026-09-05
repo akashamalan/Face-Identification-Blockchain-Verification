@@ -78,6 +78,23 @@ CONTRACT_ABI = [
 SEPOLIA_EXPLORER = "https://sepolia.etherscan.io"
 
 
+def _hex(value) -> str:
+    """Normalise bytes / HexBytes / str to bare lowercase hex with no 0x prefix.
+
+    hexbytes >= 2.0 returns HexBytes.hex() without the 0x prefix, but 1.x returned
+    it *with* one, and hexbytes is a transitive dependency we do not pin directly.
+    Normalising here keeps on-chain values comparable to our bare SHA-256 hex
+    regardless of which version resolves.
+    """
+    if isinstance(value, str):
+        raw = value
+    elif hasattr(value, "hex"):
+        raw = value.hex()
+    else:
+        raw = bytes(value).hex()
+    return raw.removeprefix("0x").removeprefix("0X").lower()
+
+
 class EthereumProvider(BlockchainProvider):
     def __init__(
         self,
@@ -145,26 +162,39 @@ class EthereumProvider(BlockchainProvider):
                 self._w3.eth.wait_for_transaction_receipt, tx_hash, timeout=self._timeout
             )
 
-            # Extract recordId from event logs
-            record_id = ""
-            try:
-                logs = self._contract.events.RecordRegistered().process_receipt(receipt)
-                if logs:
-                    record_id = logs[0]["args"]["recordId"].hex()
-            except Exception:
-                pass
+            # A reverted tx still produces a receipt. Without this check a revert
+            # would be reported as a successful registration.
+            if receipt.get("status") != 1:
+                raise BlockchainError(
+                    f"Transaction 0x{_hex(tx_hash)} reverted on-chain "
+                    f"(status={receipt.get('status')}, block {receipt['blockNumber']})."
+                )
+
+            # Extract recordId from the event log. This is the ONLY way to obtain it —
+            # the contract computes it as keccak256(fingerprint, sender, block.timestamp),
+            # which we cannot reproduce off-chain (we do not know the block timestamp).
+            # Failing to decode it means the record can never be read back, so this is
+            # a hard error rather than something to swallow.
+            logs = self._contract.events.RecordRegistered().process_receipt(receipt)
+            if not logs:
+                raise BlockchainError(
+                    f"Transaction 0x{_hex(tx_hash)} succeeded but emitted no "
+                    "RecordRegistered event; the record id cannot be recovered."
+                )
+            record_id = _hex(logs[0]["args"]["recordId"])
 
             elapsed = (time.perf_counter() - t0) * 1000
 
             return BlockchainRecord(
                 network="sepolia",
-                transaction_hash=tx_hash.hex(),
+                record_id=record_id,
+                transaction_hash=_hex(tx_hash),
                 block_number=receipt["blockNumber"],
-                fingerprint=fingerprint_hex,
+                fingerprint=_hex(fingerprint_hex),
                 source_url=source_url,
                 timestamp=int(time.time()),
                 submitter=self._account.address,
-                explorer_url=f"{SEPOLIA_EXPLORER}/tx/0x{tx_hash.hex()}",
+                explorer_url=f"{SEPOLIA_EXPLORER}/tx/0x{_hex(tx_hash)}",
                 submission_time_ms=round(elapsed, 1),
             )
 
@@ -176,7 +206,7 @@ class EthereumProvider(BlockchainProvider):
 
     async def get_record(self, record_id: str) -> BlockchainRecord:
         try:
-            rid_bytes = bytes.fromhex(record_id.removeprefix("0x"))
+            rid_bytes = bytes.fromhex(_hex(record_id))
             result = await asyncio.to_thread(
                 self._contract.functions.getRecord(rid_bytes).call
             )
@@ -184,7 +214,8 @@ class EthereumProvider(BlockchainProvider):
 
             return BlockchainRecord(
                 network="sepolia",
-                fingerprint=fingerprint.hex(),
+                record_id=_hex(record_id),
+                fingerprint=_hex(fingerprint),
                 source_url=source_url,
                 timestamp=timestamp,
                 submitter=submitter,
@@ -196,8 +227,8 @@ class EthereumProvider(BlockchainProvider):
 
     async def verify_fingerprint(self, record_id: str, fingerprint_hex: str) -> bool:
         try:
-            rid_bytes = bytes.fromhex(record_id.removeprefix("0x"))
-            fp_bytes = bytes.fromhex(fingerprint_hex)
+            rid_bytes = bytes.fromhex(_hex(record_id))
+            fp_bytes = bytes.fromhex(_hex(fingerprint_hex))
             result = await asyncio.to_thread(
                 self._contract.functions.verifyFingerprint(rid_bytes, fp_bytes).call
             )

@@ -1,47 +1,58 @@
 import type { SearchResult } from "../types";
+import { SimilarityMeter } from "./SimilarityMeter";
 
-interface Props {
+export function ResultCard({
+  result,
+  threshold = 0.4,
+}: {
   result: SearchResult;
-}
-
-export function ResultCard({ result }: Props) {
+  threshold?: number;
+}) {
   return (
-    <div className="glass-card p-5 animate-slide-down space-y-3">
+    <div className="panel p-4 animate-slide-down">
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-gray-200 truncate text-sm">
-            {result.title || "Untitled Result"}
+          <h3 style={{ fontSize: "var(--text-xl2)" }} className="truncate">
+            {result.title || "Untitled result"}
           </h3>
-          <p className="text-xs text-gray-400 mt-1 truncate">{result.snippet}</p>
+          {result.snippet && (
+            <p
+              className="m-0 mt-1 text-[0.75rem] truncate"
+              style={{ color: "var(--color-muted-fg)" }}
+            >
+              {result.snippet}
+            </p>
+          )}
         </div>
         {result.thumbnail && (
           <img
             src={result.thumbnail}
-            alt=""
-            className="w-14 h-14 rounded-lg object-cover border border-glass-border flex-shrink-0"
+            alt={`Matched image from ${result.domain || "the discovered result"}`}
+            className="w-16 h-16 panel-flat shrink-0"
+            style={{ objectFit: "cover" }}
           />
         )}
       </div>
 
-      <div className="flex flex-wrap gap-2 text-xs">
-        <span className="px-2 py-1 rounded-full bg-accent-blue/15 text-accent-blue">
-          {result.domain}
-        </span>
-        {result.platform && (
-          <span className="px-2 py-1 rounded-full bg-accent-purple/15 text-accent-purple">
-            {result.platform}
-          </span>
-        )}
-        <span className="px-2 py-1 rounded-full bg-glass-white text-gray-400">
-          Search result
-        </span>
+      <div className="flex flex-wrap gap-2 mt-3">
+        {result.domain && <span className="chip">{result.domain}</span>}
+        {result.platform && <span className="chip">{result.platform}</span>}
       </div>
+
+      {/* verification indicator — this image came from the internet */}
+      <SimilarityMeter score={result.similarity} threshold={threshold} />
+
+      {result.match_reason && (
+        <p className="eyebrow m-0 mt-2" style={{ letterSpacing: "0.08em" }}>
+          {result.match_reason}
+        </p>
+      )}
 
       <a
         href={result.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="block text-xs text-accent-cyan hover:underline truncate"
+        className="mono-break block mt-3 underline"
       >
         {result.url}
       </a>

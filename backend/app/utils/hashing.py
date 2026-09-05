@@ -43,6 +43,24 @@ def fingerprint_dict(data: dict[str, Any]) -> str:
     return sha256_hex(canonical)
 
 
+def canonicalise_obj(obj: Any) -> str:
+    """Canonical JSON for any JSON-serialisable structure, including lists.
+
+    Same rules as canonicalise() — recursive key sort, whitespace normalisation,
+    compact separators, UTF-8. LIST ORDER IS PRESERVED, which matters for the
+    candidate audit bundle: the bundle records candidates in the order the search
+    engine returned them, and reordering them must change the digest.
+    """
+    return json.dumps(
+        _deep_clean(obj), sort_keys=True, separators=(",", ":"), ensure_ascii=False
+    )
+
+
+def fingerprint_obj(obj: Any) -> str:
+    """Canonicalise any structure (dict or list) and return its SHA-256 hex digest."""
+    return sha256_hex(canonicalise_obj(obj))
+
+
 def _deep_clean(obj: Any) -> Any:
     """Recursively normalise values for deterministic serialisation."""
     if isinstance(obj, dict):

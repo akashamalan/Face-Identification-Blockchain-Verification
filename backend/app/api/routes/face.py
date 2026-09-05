@@ -22,7 +22,8 @@ async def detect_face(
     image_bytes = await validate_upload(file, settings)
 
     svc = get_face_service()
-    face_data = svc.detect(image_bytes, allow_multiple=True)
+    detection = await svc.detect(image_bytes, allow_multiple=True)
+    face_data = detection.data
 
     return ApiResponse(success=True, data=face_data.model_dump())
 
@@ -36,6 +37,6 @@ async def encode_face(
     image_bytes = await validate_upload(file, settings)
 
     svc = get_face_service()
-    face_data, _embedding = svc.detect_and_encode(image_bytes)
+    face_data, _embedding = await svc.detect_and_encode(image_bytes)
 
     return ApiResponse(success=True, data=face_data.model_dump())

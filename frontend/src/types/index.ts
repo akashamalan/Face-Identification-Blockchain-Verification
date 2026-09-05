@@ -5,6 +5,8 @@ export interface FaceData {
   bbox: number[];
   confidence: number;
   processing_time_ms: number;
+  engine: string;
+  det_score: number;
 }
 
 export interface SearchResult {
@@ -16,6 +18,35 @@ export interface SearchResult {
   image_url: string;
   thumbnail: string;
   metadata: Record<string, unknown>;
+  similarity: number | null;
+  match_reason: string;
+}
+
+export interface CandidateEvidence {
+  position: number;
+  url: string;
+  domain: string;
+  image_source: string;
+  image_sha256: string;
+  image_bytes: number;
+  faces_detected: number;
+  similarity: number | null;
+  decision: "accepted" | "rejected_below_threshold" | "skipped" | string;
+  reason: string;
+}
+
+export interface MatchingResult {
+  status: "match" | "no_confident_match";
+  threshold: number;
+  candidates: CandidateEvidence[];
+  selected_position: number | null;
+  best_similarity: number | null;
+  matched_image_sha256: string;
+  audit_bundle_sha256: string;
+  candidates_total: number;
+  candidates_scored: number;
+  candidates_skipped: number;
+  matching_time_ms: number;
 }
 
 export interface SearchResponse {
@@ -49,17 +80,20 @@ export interface VerificationResult {
   status: "VERIFIED" | "TAMPERED" | "PENDING" | "ERROR";
   local_fingerprint: string;
   on_chain_fingerprint: string;
+  record_id: string;
   transaction_hash: string;
   verification_time_ms: number;
 }
 
 export interface PipelineResult {
   pipeline_id: string;
-  status: "success" | "error" | "pending";
+  status: "success" | "error" | "pending" | "no_confident_match";
   face: FaceData;
   search: SearchResponse;
+  matching: MatchingResult;
   fingerprint: Fingerprint;
   blockchain: BlockchainRecord;
+  on_chain_record: BlockchainRecord;
   verification: VerificationResult;
   total_time_ms: number;
   error: string | null;

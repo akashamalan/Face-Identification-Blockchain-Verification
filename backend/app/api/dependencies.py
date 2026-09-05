@@ -10,6 +10,7 @@ from app.providers.search.base import SearchProvider
 from app.services.blockchain_service import BlockchainService
 from app.services.face_service import FaceService
 from app.services.fingerprint_service import FingerprintService
+from app.services.matching_service import MatchingService
 from app.services.pipeline_service import PipelineService
 from app.services.search_service import SearchService
 from app.services.verification_service import VerificationService
@@ -68,6 +69,10 @@ def get_search_service() -> SearchService:
     return SearchService(get_search_provider())
 
 
+def get_matching_service() -> MatchingService:
+    return MatchingService(get_settings())
+
+
 def get_fingerprint_service() -> FingerprintService:
     return FingerprintService()
 
@@ -84,6 +89,7 @@ def get_pipeline_service() -> PipelineService:
     return PipelineService(
         face_service=get_face_service(),
         search_service=get_search_service(),
+        matching_service=get_matching_service(),
         fingerprint_service=get_fingerprint_service(),
         blockchain_service=get_blockchain_service(),
         verification_service=get_verification_service(),

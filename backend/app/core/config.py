@@ -43,6 +43,26 @@ class Settings(BaseSettings):
     FACE_DETECTION_MODEL: str = "buffalo_l"
     FACE_DETECTION_THRESHOLD: float = 0.5
 
+    # ── Candidate matching (stage 3) ─────────────────────────────────────
+    # MEASURED, not guessed. See scripts/calibrate_threshold.py and
+    # docs/threshold_calibration.json. On 100 same-person + 100 different-person
+    # LFW pairs with buffalo_l, TPR 0.990 / FPR 0.000 held flat from 0.12 to 0.40;
+    # sensitivity then fell (0.45 -> 0.970, 0.50 -> 0.890). 0.40 is the top of that
+    # plateau: the widest margin against false accepts (+0.28 above the highest
+    # observed different-person score of 0.1194) at no cost in recall.
+    MATCH_THRESHOLD: float = 0.40
+    MATCH_MAX_CANDIDATES: int = 60
+    MATCH_CONCURRENCY: int = 4
+    MATCH_DOWNLOAD_TIMEOUT_SECONDS: int = 10
+    MATCH_MAX_IMAGE_BYTES: int = 8 * 1024 * 1024
+
+    @field_validator("MATCH_THRESHOLD")
+    @classmethod
+    def threshold_in_range(cls, v: float) -> float:
+        if not -1.0 <= v <= 1.0:
+            raise ValueError("MATCH_THRESHOLD is a cosine similarity; it must be in [-1, 1]")
+        return v
+
     @field_validator("SEARCH_PROVIDER")
     @classmethod
     def block_mock_in_production(cls, v: str, info) -> str:

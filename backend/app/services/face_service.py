@@ -1,8 +1,20 @@
-"""Face detection and encoding service — business logic layer."""
+"""Face detection and encoding service — business logic layer.
+
+InsightFace inference is synchronous, CPU-bound, and slow (~5s on the first call
+including model load, a few hundred ms after). Calling it directly from an async
+route blocks the event loop for that entire duration, serialising every other
+request in the process. The public API here is therefore async and pushes the
+blocking work to a worker thread via asyncio.to_thread; the `_sync` variants remain
+available for synchronous callers such as tests and scripts.
+"""
 
 from __future__ import annotations
 
+import asyncio
 import time
+from typing import NamedTuple
+
+import numpy as np
 
 from app.core.config import Settings
 from app.core.exceptions import (
@@ -17,13 +29,41 @@ from app.providers.face.insightface_provider import detect_faces
 log = get_logger(__name__)
 
 
+class FaceDetection(NamedTuple):
+    """Detection metadata plus the raw embedding.
+
+    `data` is the API-safe part. `embedding` stays server-side — it is passed to
+    MatchingService for similarity scoring and is never returned to a client.
+    """
+    data: FaceData
+    embedding: np.ndarray
+
+
 class FaceService:
     def __init__(self, settings: Settings):
         self._model = settings.FACE_DETECTION_MODEL
         self._threshold = settings.FACE_DETECTION_THRESHOLD
 
-    def detect(self, image_bytes: bytes, allow_multiple: bool = False) -> FaceData:
-        """Detect faces and return metadata. Rejects zero or multiple faces by default."""
+    async def detect(
+        self, image_bytes: bytes, allow_multiple: bool = False
+    ) -> FaceDetection:
+        """Detect faces off the event loop. Rejects zero or multiple faces by default.
+
+        Returns the embedding alongside the metadata. It used to be computed and then
+        dropped on the floor here, which is why stage 3 had nothing to compare against.
+        The embedding is never serialised into an API response — FaceDetection.data is
+        the only part that reaches the client.
+        """
+        return await asyncio.to_thread(self.detect_sync, image_bytes, allow_multiple)
+
+    async def detect_and_encode(self, image_bytes: bytes) -> tuple[FaceData, list[float]]:
+        """Detect one face off the event loop and return (metadata, embedding)."""
+        return await asyncio.to_thread(self.detect_and_encode_sync, image_bytes)
+
+    def detect_sync(
+        self, image_bytes: bytes, allow_multiple: bool = False
+    ) -> FaceDetection:
+        """Blocking detect. Prefer `detect()` from async code."""
         t0 = time.perf_counter()
 
         try:
@@ -43,21 +83,29 @@ class FaceService:
         if count > 1 and not allow_multiple:
             raise MultipleFacesError(count)
 
-        best = max(faces, key=lambda f: f["confidence"])
+        best = max(faces, key=lambda f: f["det_score"])
 
-        log.info("Face detected: count=%d confidence=%.3f time=%.0fms", count, best["confidence"], elapsed)
-
-        return FaceData(
-            face_detected=True,
-            face_count=count,
-            embedding_generated=True,
-            bbox=best["bbox"],
-            confidence=best["confidence"],
-            processing_time_ms=round(elapsed, 1),
+        log.info(
+            "Face detected: engine=%s count=%d det_score=%.3f time=%.0fms",
+            best["engine"], count, best["det_score"], elapsed,
         )
 
-    def detect_and_encode(self, image_bytes: bytes) -> tuple[FaceData, list[float]]:
-        """Detect one face and return (metadata, embedding as list of floats).
+        return FaceDetection(
+            data=FaceData(
+                face_detected=True,
+                face_count=count,
+                embedding_generated=True,
+                bbox=best["bbox"],
+                confidence=best["det_score"],
+                det_score=best["det_score"],
+                engine=best["engine"],
+                processing_time_ms=round(elapsed, 1),
+            ),
+            embedding=best["embedding"],
+        )
+
+    def detect_and_encode_sync(self, image_bytes: bytes) -> tuple[FaceData, list[float]]:
+        """Blocking detect+encode. Prefer `detect_and_encode()` from async code.
 
         The embedding is kept as a Python list and never logged or sent to the frontend.
         """
@@ -86,7 +134,9 @@ class FaceService:
             face_count=1,
             embedding_generated=True,
             bbox=face["bbox"],
-            confidence=face["confidence"],
+            confidence=face["det_score"],
+            det_score=face["det_score"],
+            engine=face["engine"],
             processing_time_ms=round(elapsed, 1),
         )
         return data, embedding

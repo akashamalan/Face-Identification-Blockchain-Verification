@@ -14,35 +14,27 @@ export function ImageUpload({ onFileSelected, disabled }: Props) {
     (file: File) => {
       if (!file.type.startsWith("image/")) return;
       setFileName(file.name);
-      const url = URL.createObjectURL(file);
-      setPreview(url);
+      setPreview(URL.createObjectURL(file));
       onFileSelected(file);
     },
-    [onFileSelected]
+    [onFileSelected],
   );
-
-  const onDrop = useCallback(
-    (e: React.DragEvent) => {
-      e.preventDefault();
-      setDragOver(false);
-      const file = e.dataTransfer.files[0];
-      if (file) handleFile(file);
-    },
-    [handleFile]
-  );
-
-  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) handleFile(file);
-  };
 
   return (
     <div
-      className={`glass-card p-8 text-center transition-all duration-300 cursor-pointer
-        ${dragOver ? "border-accent-cyan glow-blue scale-[1.01]" : "hover:border-accent-blue/40"}
-        ${disabled ? "opacity-50 pointer-events-none" : ""}`}
-      onDrop={onDrop}
-      onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+      className="dropzone p-6 text-center"
+      data-over={dragOver}
+      style={disabled ? { pointerEvents: "none" } : undefined}
+      onDrop={(e) => {
+        e.preventDefault();
+        setDragOver(false);
+        const f = e.dataTransfer.files[0];
+        if (f) handleFile(f);
+      }}
+      onDragOver={(e) => {
+        e.preventDefault();
+        setDragOver(true);
+      }}
       onDragLeave={() => setDragOver(false)}
       onClick={() => !disabled && document.getElementById("file-input")?.click()}
     >
@@ -51,28 +43,32 @@ export function ImageUpload({ onFileSelected, disabled }: Props) {
         type="file"
         accept="image/jpeg,image/png,image/webp"
         className="hidden"
-        onChange={onInputChange}
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) handleFile(f);
+        }}
         disabled={disabled}
       />
 
       {preview ? (
-        <div className="space-y-4">
+        <div className="flex flex-col items-center gap-3">
           <img
             src={preview}
-            alt="Preview"
-            className="mx-auto max-h-48 rounded-xl object-cover border border-glass-border"
+            alt="Uploaded face"
+            className="max-h-56 panel-flat"
+            style={{ objectFit: "contain" }}
           />
-          <p className="text-sm text-gray-400">{fileName}</p>
+          <p className="mono-break m-0">{fileName}</p>
         </div>
       ) : (
-        <div className="space-y-3 py-6">
-          <div className="text-5xl">📸</div>
-          <p className="text-lg font-medium text-gray-300">
-            Drop an image here or click to upload
+        <div className="py-8">
+          <p
+            className="m-0 mb-2"
+            style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-xl2)" }}
+          >
+            Drop a face image
           </p>
-          <p className="text-sm text-gray-500">
-            JPG, PNG, or WEBP · Max 10 MB · Must contain a face
-          </p>
+          <p className="eyebrow m-0">jpg · png · webp — max 10 mb — one face</p>
         </div>
       )}
     </div>

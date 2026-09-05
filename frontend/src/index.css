@@ -1,72 +1,386 @@
 @import "tailwindcss";
 
+/* ============================================================================
+   HH GOA design system — Face Verification Pipeline
+   Exact token values from the brief. Do not round.
+
+   Signature: shadows have ZERO blur and ZERO spread. Every card, button and
+   panel gets a hard offset block shadow and a solid 2px black border.
+
+   Banned everywhere: gradients, blur, translucency, system sans, pill radii,
+   white backgrounds, grey text between #000000 and #8d8a78.
+   ========================================================================= */
+
 @theme {
-  --color-dark-900: #0a0a0f;
-  --color-dark-800: #12121a;
-  --color-dark-700: #1a1a2e;
-  --color-dark-600: #252540;
-  --color-dark-500: #2e2e4a;
-  --color-accent-blue: #4f8fff;
-  --color-accent-cyan: #00d4ff;
-  --color-accent-purple: #8b5cf6;
-  --color-accent-green: #22c55e;
-  --color-accent-red: #ef4444;
-  --color-accent-amber: #f59e0b;
-  --color-glass-white: rgba(255, 255, 255, 0.05);
-  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-bg: #fffbe8;
+  --color-fg: #000000;
+  --color-primary: #4c9d6a;
+  --color-accent: #ff0080;
+  --color-secondary: #fee101;
+  --color-muted: #eeebdf;
+  --color-muted-fg: #8d8a78;
+  --color-line: #e1ded0;
+  --color-danger: #ef4444;
+
+  --radius-hh: 0.375rem;
+
+  --font-display: "Imbue", Georgia, "Times New Roman", serif;
+  --font-mono: "Victor Mono", ui-monospace, Consolas, monospace;
+
+  /* Tailwind v4 Preflight applies these to unstyled elements and form controls.
+     Left at their defaults they resolve to -apple-system / system-ui, which the
+     brief bans outright. Both are pointed at Victor Mono. */
+  --default-font-family: "Victor Mono", ui-monospace, Consolas, monospace;
+  --default-mono-font-family: "Victor Mono", ui-monospace, Consolas, monospace;
+
+  --text-xs2: 0.563rem;
+  --text-sm2: 0.75rem;
+  --text-base2: 0.938rem;
+  --text-lg2: 1.188rem;
+  --text-xl2: 1.375rem;
+  --text-2xl2: 2rem;
+  --text-3xl2: 2.375rem;
+  --text-4xl2: 4rem;
 }
 
-@layer base {
-  body {
-    @apply bg-dark-900 text-gray-200 antialiased;
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
-  }
+:root {
+  --shadow-hh-sm: rgba(0, 0, 0, 0.25) 6px 8px 0px 0px;
+  --shadow-hh-lg: rgba(0, 0, 0, 0.25) 8px 10px 0px 0px;
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-7: 1.75rem;
+  --s-9: 2.25rem;
 }
 
-@layer components {
-  .glass-card {
-    @apply bg-glass-white backdrop-blur-xl border border-glass-border rounded-2xl;
-  }
-
-  .glow-blue {
-    box-shadow: 0 0 20px rgba(79, 143, 255, 0.15), 0 0 60px rgba(79, 143, 255, 0.05);
-  }
-
-  .glow-green {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2), 0 0 60px rgba(34, 197, 94, 0.08);
-  }
-
-  .glow-red {
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2), 0 0 60px rgba(239, 68, 68, 0.08);
-  }
-
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-purple));
-  }
+html {
+  overflow-x: hidden;
 }
 
-@keyframes pulse-glow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: var(--text-base2);
+  line-height: 1.55;
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
 }
 
-@keyframes slide-down {
-  from { opacity: 0; transform: translateY(-12px); }
-  to { opacity: 1; transform: translateY(0); }
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.92;
+  margin: 0;
+  font-variation-settings: "opsz" 80;
+}
+
+code,
+kbd,
+button,
+input,
+select,
+textarea,
+summary {
+  font-family: var(--font-mono);
+}
+
+/* ── primitives ─────────────────────────────────────────────────────────── */
+
+.panel {
+  background: var(--color-bg);
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+  box-shadow: var(--shadow-hh-sm);
+}
+
+.panel-lg {
+  box-shadow: var(--shadow-hh-lg);
+}
+
+.panel-flat {
+  background: var(--color-bg);
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+}
+
+.btn-hh {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm2);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+  box-shadow: var(--shadow-hh-sm);
+  padding: var(--s-2) var(--s-4);
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 120ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.btn-hh:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hh-lg);
+}
+
+.btn-hh:active {
+  transform: translate(3px, 4px);
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 3px 0px 0px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+  padding: 0.1rem var(--s-2);
+  font-size: var(--text-xs2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--color-bg);
+}
+
+.chip-ok {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+.chip-warn {
+  background: var(--color-secondary);
+  color: var(--color-fg);
+}
+.chip-bad {
+  background: var(--color-danger);
+  color: var(--color-bg);
+}
+.chip-live {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-fg);
+}
+
+.rule-hh {
+  border: 0;
+  border-top: 2px solid var(--color-fg);
+  color: var(--color-fg);
+  background: transparent;
+}
+
+/* ── pipeline stage rail ────────────────────────────────────────────────── */
+
+/* solid, never a gradient */
+.connector-line {
+  width: 2px;
+  background: var(--color-fg);
+}
+
+.stage-node {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.stage-node[data-status="running"] {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+.stage-node[data-status="success"] {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+.stage-node[data-status="error"] {
+  background: var(--color-danger);
+  color: var(--color-bg);
+}
+
+/* ── dropzone ───────────────────────────────────────────────────────────── */
+
+.dropzone {
+  border: 2px dashed var(--color-line);
+  border-radius: var(--radius-hh);
+  background: var(--color-bg);
+  cursor: pointer;
+  transition: border-color 140ms ease-out;
+}
+
+.dropzone[data-over="true"] {
+  border-style: solid;
+  border-color: var(--color-accent);
+}
+
+.dropzone:hover {
+  border-color: var(--color-fg);
+}
+
+/* ── audit bundle rows ──────────────────────────────────────────────────── */
+
+.aud-row {
+  display: grid;
+  grid-template-columns: 2.4rem 4.2rem 1fr;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-2);
+  border-left: 3px solid var(--color-line);
+  font-size: var(--text-xs2);
+}
+
+.aud-row[data-decision="accepted"] {
+  border-left-color: var(--color-primary);
+}
+.aud-row[data-decision="rejected_below_threshold"] {
+  border-left-color: var(--color-danger);
+}
+.aud-row[data-decision="skipped"] {
+  border-left-color: var(--color-line);
+}
+
+.mono-break {
+  font-family: var(--font-mono);
+  word-break: break-all;
+  font-size: var(--text-xs2);
+  line-height: 1.5;
+}
+
+/* ── motion ─────────────────────────────────────────────────────────────── */
+
+@keyframes hh-slide {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .animate-slide-down {
-  animation: slide-down 0.4s ease-out forwards;
+  animation: hh-slide 260ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes hh-blink {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: hh-blink 900ms cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
 }
 
-/* Connector line between pipeline stages */
-.connector-line {
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-accent-cyan), var(--color-accent-purple));
-  opacity: 0.4;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .btn-hh:hover {
+    transform: none;
+  }
+}
+
+/* ── responsive: shadow offset is the overflow risk on narrow screens ───── */
+
+@media (max-width: 400px) {
+  :root {
+    --shadow-hh-sm: rgba(0, 0, 0, 0.25) 4px 5px 0px 0px;
+    --shadow-hh-lg: rgba(0, 0, 0, 0.25) 5px 6px 0px 0px;
+  }
+}
+
+/* ── verification indicator ─────────────────────────────────────────────── */
+
+.sim {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: var(--s-2);
+}
+
+.sim-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.sim-label {
+  font-size: var(--text-xs2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-fg);
+}
+
+.sim-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg2);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* the ●-on-━ track. Monospace so the dot lands on the grid. */
+.sim-track {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm2);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--color-fg);
+}
+
+.sim-band {
+  align-self: flex-start;
+  margin-top: 0.15rem;
+}
+
+/* ── footer ─────────────────────────────────────────────────────────────── */
+
+.foot-hh {
+  margin-top: var(--s-9);
+}
+
+.foot-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-top: var(--s-3);
+}
+
+.foot-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--color-muted-fg);
+  font-size: var(--text-xs2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
