@@ -45,7 +45,6 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
-    # ── CORS ─────────────────────────────────────────────────────────
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.CORS_ORIGINS,
@@ -54,7 +53,6 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
-    # ── Exception handlers ───────────────────────────────────────────
     @app.exception_handler(PipelineBaseError)
     async def pipeline_error_handler(request: Request, exc: PipelineBaseError):
         return JSONResponse(
@@ -79,7 +77,6 @@ def create_app() -> FastAPI:
             ).model_dump(),
         )
 
-    # ── Routes ───────────────────────────────────────────────────────
     app.include_router(health.router, prefix="/api")
     app.include_router(face.router, prefix="/api")
     app.include_router(search.router, prefix="/api")
@@ -90,3 +87,8 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
+
+if __name__ == "__main__":
+    import uvicorn
+    settings = get_settings()
+    uvicorn.run("app.main:app", host=settings.HOST, port=settings.PORT, reload=settings.DEBUG)

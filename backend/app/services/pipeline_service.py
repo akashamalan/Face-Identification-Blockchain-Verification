@@ -1,16 +1,8 @@
-"""End-to-end pipeline orchestrator.
-
-Executes the full flow:
-    face → search → MATCH (re-encode + score) → fingerprint
-         → blockchain write → blockchain READ-BACK → verify
-
-The read-back is a distinct stage on purpose. Verification compares the locally
-recomputed hash against the value fetched from the chain by record id, not against
-the value that was submitted — otherwise the comparison is a tautology.
-"""
+"""End-to-end pipeline orchestrator."""
 
 from __future__ import annotations
 
+import asyncio
 import time
 import uuid
 
@@ -53,16 +45,25 @@ class PipelineService:
         result = PipelineResult(pipeline_id=pipeline_id)
 
         try:
-            # ── Stage 1: Face Detection ──────────────────────────────────
-            log.info("Pipeline %s: detecting face", pipeline_id)
-            detection = await self._face.detect(image_bytes, allow_multiple=False)
-            result.face = detection.data
-
-            # ── Stage 2: Reverse Image Search ────────────────────────────
-            log.info("Pipeline %s: searching", pipeline_id)
-            search_response = await self._search.reverse_image_search(
-                image_bytes, filename=filename
+            # Search takes only the image bytes, so it does not depend on the
+            # detection result. Running them concurrently takes the shorter of the
+            # two off the critical path instead of paying for both in series.
+            log.info("Pipeline %s: detecting face + searching (concurrent)", pipeline_id)
+            t_par = time.perf_counter()
+            detection, search_response = await asyncio.gather(
+                self._face.detect(image_bytes, allow_multiple=False),
+                self._search.reverse_image_search(image_bytes, filename=filename),
             )
+            log.info(
+                "Pipeline %s: stage=detect+search parallel_ms=%.1f "
+                "detect_ms=%.1f search_ms=%.1f saved_ms=%.1f",
+                pipeline_id,
+                (time.perf_counter() - t_par) * 1000,
+                detection.data.processing_time_ms,
+                search_response.search_time_ms,
+                min(detection.data.processing_time_ms, search_response.search_time_ms),
+            )
+            result.face = detection.data
             result.search = search_response
 
             if not search_response.selected_result:
@@ -70,22 +71,14 @@ class PipelineService:
                 result.error = "No matching result found."
                 return result
 
-            # ── Stage 3: Re-encode candidates and score them ─────────────
-            # The accuracy stage. Lens ordering is a hint, not evidence — every
-            # candidate is downloaded, re-encoded with the same model, and scored
-            # against the input face. Selection is by similarity, not Lens position.
             log.info("Pipeline %s: matching candidates", pipeline_id)
             matching, selected = await self._matching.match(
                 detection.embedding, search_response.results
             )
             result.matching = matching
-            # results were annotated in place with similarity / match_reason
             result.search = search_response
 
             if selected is None:
-                # A valid outcome: the search returned nobody who is confidently the
-                # same person. Nothing is registered, but the audit bundle still
-                # records every candidate considered and why each was rejected.
                 result.status = "no_confident_match"
                 best = matching.best_similarity
                 result.error = (
@@ -103,26 +96,18 @@ class PipelineService:
 
             search_response.selected_result = selected
 
-            # ── Stage 4: Fingerprint ─────────────────────────────────────
             log.info("Pipeline %s: generating fingerprint", pipeline_id)
             fingerprint = self._fingerprint.create_fingerprint(
                 selected, input_image_bytes=image_bytes, matching=matching
             )
             result.fingerprint = fingerprint
 
-            # ── Stage 5: Blockchain Registration ─────────────────────────
             log.info("Pipeline %s: registering on blockchain", pipeline_id)
             bc_record = await self._blockchain.register(
                 fingerprint.value, selected.url
             )
             result.blockchain = bc_record
 
-            # ── Stage 6: Read the record BACK from the chain ─────────────
-            # This read is what makes verification meaningful. Previously the
-            # pipeline passed bc_record.fingerprint — the value it had just
-            # submitted — straight into verification, comparing a value against
-            # itself, so TAMPERED was unreachable. We now fetch the record by its
-            # on-chain id and verify against what the chain actually returns.
             if not bc_record.record_id:
                 raise VerificationError(
                     "Blockchain record has no record_id, so it cannot be read back "
@@ -136,7 +121,6 @@ class PipelineService:
             on_chain_record = await self._blockchain.get_record(bc_record.record_id)
             result.on_chain_record = on_chain_record
 
-            # ── Stage 7: Verify against the read-back value ──────────────
             log.info("Pipeline %s: verifying", pipeline_id)
             verification = self._verification.verify(
                 canonical_data=fingerprint.canonical_data,

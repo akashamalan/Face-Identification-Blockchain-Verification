@@ -1,18 +1,4 @@
-"""Measure matching-accuracy changes on the SAME LFW pairs, before and after.
-
-Design: extract per-image features ONCE (normal embedding, mirrored embedding,
-det_score, box area, blur variance, yaw/pitch) and cache them. Every variant is
-then evaluated from that cache with no further model calls, so adding a variant
-costs nothing and each is measured on identical data.
-
-Variants are compared on: same/different distributions, the class gap, and TPR at
-FPR = 0 (the operating point that matters — a false accept means naming the wrong
-person).
-
-Usage:
-    backend/venv/Scripts/python.exe scripts/benchmark_matching.py --pairs 100
-    backend/venv/Scripts/python.exe scripts/benchmark_matching.py --pairs 100 --reuse
-"""
+"""Measure matching-accuracy changes on the SAME LFW pairs, before and after."""
 
 from __future__ import annotations
 
@@ -34,8 +20,6 @@ from app.providers.face.insightface_provider import (  # noqa: E402
 
 CACHE = ROOT / "docs" / "benchmark_features.npz"
 
-
-# ── feature extraction ──────────────────────────────────────────────────────
 
 def _to_png(rgb_float: np.ndarray) -> bytes:
     """LFW arrives as float32 RGB in [0,1]; rescale, BGR, upscale 2x, encode."""
@@ -60,7 +44,6 @@ def _features(rgb_float: np.ndarray) -> dict | None:
         return None
     f = max(faces, key=lambda x: x["det_score"])
 
-    # mirrored pass — detect on the flipped image so alignment is done natively
     rgb8 = np.clip(rgb_float * 255.0, 0, 255).astype(np.uint8)
     bgr = cv2.cvtColor(rgb8, cv2.COLOR_RGB2BGR)
     bgr = cv2.resize(bgr, None, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
@@ -140,8 +123,6 @@ def extract(n_per_class: int) -> dict:
     return data
 
 
-# ── evaluation ──────────────────────────────────────────────────────────────
-
 def cos(a: np.ndarray, b: np.ndarray) -> float:
     na, nb = float(np.linalg.norm(a)), float(np.linalg.norm(b))
     return 0.0 if na == 0 or nb == 0 else float(np.dot(a, b) / (na * nb))
@@ -183,8 +164,7 @@ def stats(xs: list[float]) -> dict:
 
 
 def evaluate(name: str, d: dict, use_flip: bool, gate: dict | None) -> dict:
-    """Score every pair under one variant. Query side = A (flip-augmented in
-    production); candidate side = B (single pass, as in the real pipeline)."""
+    """Score every pair under one variant. Query side = A (flip-augmented in"""
     same, diff = [], []
     gated_same = gated_diff = 0
 
@@ -263,13 +243,7 @@ def main() -> int:
     else:
         d = extract(args.pairs)
 
-    # Gate thresholds. area is in the 2x-upscaled frame, so 40x40 in the original
     # is 80x80 = 6400px here.
-    # Thresholds set FROM the observed distribution, not guessed. Across 400 LFW
-    # faces: det p01=0.724 min=0.607; area min=24604; blur p01=6.28 min=4.40;
-    # |yaw| p99~0.29 max=1.00; |pitch-0.5| p95~0.19 max=0.38.
-    # A gate should reject outliers, not the median — the first pass used
-    # blur>=25 (above LFW's median of 15.3) and threw away 84% of the data.
     GATE = {"det": 0.50, "area": 6400.0, "blur": 5.0, "yaw": 0.60, "pitch": 0.40}
 
     results = [

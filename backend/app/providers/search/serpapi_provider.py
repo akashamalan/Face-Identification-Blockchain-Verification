@@ -147,10 +147,6 @@ class SerpApiSearchProvider(SearchProvider):
             domain=domain,
             platform=platform,
             snippet=match.get("snippet", match.get("source", "")),
-            # NEVER fall back to `link` here. `link` is the PAGE url; using it as
-            # image_url makes every candidate look like it has an image, so the
-            # matcher downloads HTML, fails to decode it, and scores nothing.
-            # Leave it empty and let the thumbnail be used instead.
             image_url=match.get("source_image") or match.get("image") or "",
             thumbnail=match.get("thumbnail", ""),
             metadata={

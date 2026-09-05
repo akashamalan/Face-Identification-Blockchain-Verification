@@ -119,10 +119,7 @@ export default function App() {
 
   return (
     <div className="max-w-6xl mx-auto px-5 py-8" style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh" }}>
-      {/* Flush-left masthead. No centred hero, no rounded CTA. */}
       <header className="pb-4 mb-8" style={{ borderBottom: "2px solid var(--color-fg)" }}>
-        {/* Primary brand lockup: wordmark with "Task Three" set beneath its
-            right edge, so the two read as one unit. */}
         <div className="brand-lockup">
           <HackerHouseWordmark />
           <p className="task-three">Task 3</p>
@@ -150,7 +147,6 @@ export default function App() {
       </header>
 
       <div className="grid gap-8 lg:grid-cols-2 split-rule">
-        {/* ── left ── */}
         <div className="flex flex-col gap-6 min-w-0">
           <section>
             <p className="eyebrow mb-2">1 · upload face image</p>
@@ -225,7 +221,6 @@ export default function App() {
           </section>
         </div>
 
-        {/* ── right ── */}
         <div className="flex flex-col gap-6 min-w-0">
           {error && (
             <div
@@ -297,7 +292,6 @@ export default function App() {
             </section>
           )}
 
-          {/* audit bundle — every candidate, in search order */}
           {m && m.candidates_total > 0 && (
             <section>
               <p className="eyebrow mb-2">candidate audit bundle</p>

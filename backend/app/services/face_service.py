@@ -1,12 +1,4 @@
-"""Face detection and encoding service — business logic layer.
-
-InsightFace inference is synchronous, CPU-bound, and slow (~5s on the first call
-including model load, a few hundred ms after). Calling it directly from an async
-route blocks the event loop for that entire duration, serialising every other
-request in the process. The public API here is therefore async and pushes the
-blocking work to a worker thread via asyncio.to_thread; the `_sync` variants remain
-available for synchronous callers such as tests and scripts.
-"""
+"""Face detection and encoding service — business logic layer."""
 
 from __future__ import annotations
 
@@ -30,11 +22,7 @@ log = get_logger(__name__)
 
 
 class FaceDetection(NamedTuple):
-    """Detection metadata plus the raw embedding.
-
-    `data` is the API-safe part. `embedding` stays server-side — it is passed to
-    MatchingService for similarity scoring and is never returned to a client.
-    """
+    """Detection metadata plus the raw embedding."""
     data: FaceData
     embedding: np.ndarray
 
@@ -47,13 +35,7 @@ class FaceService:
     async def detect(
         self, image_bytes: bytes, allow_multiple: bool = False
     ) -> FaceDetection:
-        """Detect faces off the event loop. Rejects zero or multiple faces by default.
-
-        Returns the embedding alongside the metadata. It used to be computed and then
-        dropped on the floor here, which is why stage 3 had nothing to compare against.
-        The embedding is never serialised into an API response — FaceDetection.data is
-        the only part that reaches the client.
-        """
+        """Detect faces off the event loop. Rejects zero or multiple faces by default."""
         return await asyncio.to_thread(self.detect_sync, image_bytes, allow_multiple)
 
     async def detect_and_encode(self, image_bytes: bytes) -> tuple[FaceData, list[float]]:
@@ -105,10 +87,7 @@ class FaceService:
         )
 
     def detect_and_encode_sync(self, image_bytes: bytes) -> tuple[FaceData, list[float]]:
-        """Blocking detect+encode. Prefer `detect_and_encode()` from async code.
-
-        The embedding is kept as a Python list and never logged or sent to the frontend.
-        """
+        """Blocking detect+encode. Prefer `detect_and_encode()` from async code."""
         t0 = time.perf_counter()
 
         try:

@@ -1,4 +1,4 @@
-"""Standardised API response wrappers."""
+
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ class ApiResponse(BaseModel):
 
 
 class HealthService(BaseModel):
-    status: str  # "ready", "configured", "unconfigured", "connected", "disconnected"
+    status: str
 
 
 class HealthResponse(BaseModel):

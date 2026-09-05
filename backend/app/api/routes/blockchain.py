@@ -29,21 +29,10 @@ async def get_record(record_id: str):
 
 @router.post("/verify", response_model=ApiResponse)
 async def verify_fingerprint(req: VerifyRequest):
-    """Re-verify post data against an on-chain record.
-
-    Reads the record back from the chain by `record_id`, recomputes the SHA-256
-    fingerprint from the supplied `post_data`, and compares the two. Supplying
-    post_data that differs in any way from what was registered yields TAMPERED.
-
-    The previous implementation computed the fingerprint locally and then reported
-    that same local value as the "on-chain" fingerprint, so the response could
-    never disagree with itself. It also passed a fingerprint where the contract
-    expects a recordId (keccak256 of fingerprint+sender+timestamp), which reverts.
-    """
+    """Re-verify post data against an on-chain record."""
     blockchain_svc = get_blockchain_service()
     verification_svc = get_verification_service()
 
-    # Genuine read-back: the comparison value comes from the chain, not from us.
     on_chain_record = await blockchain_svc.get_record(req.record_id)
 
     result = verification_svc.verify(

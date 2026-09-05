@@ -1,20 +1,4 @@
-"""Deterministic SHA-256 hashing with canonical JSON serialisation.
-
-Canonicalization algorithm (documented in README):
-1. Input dict is recursively processed.
-2. Keys are sorted alphabetically at every nesting level.
-3. String values are stripped of leading/trailing whitespace.
-4. The dict is serialised to JSON with:
-   - sort_keys=True
-   - separators=(',', ':')   (no extra spaces)
-   - ensure_ascii=False       (UTF-8)
-5. The resulting JSON string is encoded to UTF-8 bytes.
-6. SHA-256 is computed over those bytes.
-7. The digest is returned as a lowercase hex string.
-
-No timestamps, random values, or non-deterministic content is included in
-the hash input.
-"""
+"""Deterministic SHA-256 hashing with canonical JSON serialisation."""
 
 from __future__ import annotations
 
@@ -44,13 +28,7 @@ def fingerprint_dict(data: dict[str, Any]) -> str:
 
 
 def canonicalise_obj(obj: Any) -> str:
-    """Canonical JSON for any JSON-serialisable structure, including lists.
-
-    Same rules as canonicalise() — recursive key sort, whitespace normalisation,
-    compact separators, UTF-8. LIST ORDER IS PRESERVED, which matters for the
-    candidate audit bundle: the bundle records candidates in the order the search
-    engine returned them, and reordering them must change the digest.
-    """
+    """Canonical JSON for any JSON-serialisable structure, including lists."""
     return json.dumps(
         _deep_clean(obj), sort_keys=True, separators=(",", ":"), ensure_ascii=False
     )

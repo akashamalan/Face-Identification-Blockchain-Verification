@@ -1,7 +1,4 @@
-"""In-memory blockchain simulation for testing.
-
-Implements the same interface as EthereumProvider but stores records in a dict.
-"""
+"""In-memory blockchain simulation for testing."""
 
 from __future__ import annotations
 
@@ -53,9 +50,6 @@ class LocalBlockchainProvider(BlockchainProvider):
             explorer_url="",
             submission_time_ms=1.0,
         )
-        # Store a copy so a caller mutating the returned record cannot alter the
-        # stored one. A real chain returns a snapshot, not a live handle, and
-        # verification is only meaningful if read-back is independent of the caller.
         self._records[record_id] = record.model_copy(deep=True)
         log.info("Local blockchain: registered record %s", record_id[:16])
         return record

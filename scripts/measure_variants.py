@@ -1,25 +1,4 @@
-"""Measure matching accuracy variants on the SAME LFW pairs.
-
-Two phases so the expensive part happens once:
-
-  PHASE 1 (slow, ~20 min)  encode every LFW image twice — original and mirrored —
-                           and record quality metrics. Cached to a .npz.
-  PHASE 2 (instant)        evaluate every variant and threshold sweep from the
-                           cache, in numpy. No further forward passes.
-
-Variants evaluated:
-  baseline          query = single embedding                    (what ships today)
-  flip              query = flip-averaged embedding             (item 1)
-  flip+quality      flip-averaged, with quality gating applied  (items 1+2)
-
-The query/candidate asymmetry mirrors production: flip-averaging is applied to the
-INPUT face only, never to candidates, because that is where the extra forward pass
-is affordable.
-
-Usage:
-    backend/venv/Scripts/python.exe scripts/measure_variants.py --pairs 100
-    backend/venv/Scripts/python.exe scripts/measure_variants.py --pairs 100 --reuse
-"""
+"""Measure matching accuracy variants on the SAME LFW pairs."""
 
 from __future__ import annotations
 
@@ -164,8 +143,6 @@ def sweep(same: np.ndarray, diff: np.ndarray):
 def evaluate(name: str, same: np.ndarray, diff: np.ndarray, gated: int = 0):
     sw = sweep(same, diff)
     zero_fp = [r for r in sw if r["fp"] == 0]
-    # the metric that matters: highest TPR achievable with ZERO false accepts,
-    # and the widest threshold still achieving it (top of the plateau)
     best_tpr = max((r["tpr"] for r in zero_fp), default=0.0)
     plateau = [r for r in zero_fp if r["tpr"] == best_tpr]
     top = max(plateau, key=lambda r: r["t"]) if plateau else None
@@ -199,10 +176,8 @@ def main() -> int:
     same_mask = d["same"]
     e0, e1, m0, m1 = d["e0"], d["e1"], d["m0"], d["m1"]
 
-    # ── baseline: single embedding both sides ──────────────────────────────
     base = cos(e0, e1)
 
-    # ── flip: QUERY side (index 0) flip-averaged, candidate side untouched ──
     q_flip = np.stack([flip_average(e0[i], m0[i]) for i in range(len(e0))])
     flip = cos(q_flip, e1)
 
@@ -211,7 +186,6 @@ def main() -> int:
         evaluate("flip", flip[same_mask], flip[~same_mask]),
     ]
 
-    # ── flip + quality gating ──────────────────────────────────────────────
     t = QualityThresholds()
     keep = np.array([
         quality_reason(face_dict(d, 0, i), t) == ""
@@ -224,7 +198,6 @@ def main() -> int:
         if sm.sum() > 3 and (~sm).sum() > 3:
             results.append(evaluate("flip+quality", fq[sm], fq[~sm], gated=gated))
 
-    # ── report ─────────────────────────────────────────────────────────────
     print("\n" + "=" * 92)
     print("VARIANT COMPARISON — same 100+100 LFW pairs, buffalo_l, cosine")
     print("=" * 92)

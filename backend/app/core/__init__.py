@@ -11,7 +11,6 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    # ── App ──────────────────────────────────────────────────────────────
     APP_NAME: str = "Face Verification Pipeline"
     APP_VERSION: str = "1.0.0"
     ENV: Literal["development", "production", "testing"] = "development"
@@ -19,20 +18,16 @@ class Settings(BaseSettings):
     HOST: str = "0.0.0.0"
     PORT: int = 8000
 
-    # ── CORS ─────────────────────────────────────────────────────────────
     CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:3000"]
 
-    # ── Upload limits ────────────────────────────────────────────────────
     MAX_UPLOAD_SIZE_MB: int = 10
     ALLOWED_IMAGE_EXTENSIONS: list[str] = [".jpg", ".jpeg", ".png", ".webp"]
     TEMP_DIR: str = "tmp_uploads"
 
-    # ── Search provider ──────────────────────────────────────────────────
     SEARCH_PROVIDER: Literal["serpapi", "mock"] = "serpapi"
     SERPAPI_API_KEY: str = ""
     SEARCH_TIMEOUT_SECONDS: int = 30
 
-    # ── Blockchain ───────────────────────────────────────────────────────
     BLOCKCHAIN_PROVIDER: Literal["ethereum", "local"] = "ethereum"
     BLOCKCHAIN_RPC_URL: str = ""
     BLOCKCHAIN_PRIVATE_KEY: str = ""
@@ -40,7 +35,6 @@ class Settings(BaseSettings):
     CHAIN_ID: int = 11155111  # Sepolia
     BLOCKCHAIN_TIMEOUT_SECONDS: int = 120
 
-    # ── Face engine ──────────────────────────────────────────────────────
     FACE_DETECTION_MODEL: str = "buffalo_l"
     FACE_DETECTION_THRESHOLD: float = 0.5
 

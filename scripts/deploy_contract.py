@@ -1,22 +1,4 @@
-"""Deploy VerificationRegistry contract to Ethereum Sepolia testnet.
-
-Usage:
-    python scripts/deploy_contract.py
-
-Requires environment variables:
-    BLOCKCHAIN_RPC_URL   - Alchemy/Infura Sepolia endpoint
-    BLOCKCHAIN_PRIVATE_KEY - Deployer wallet private key (must have Sepolia ETH)
-
-The script prints the deployed contract address which you should set as
-CONTRACT_ADDRESS in your .env file.
-
-ALTERNATIVE: Deploy via Remix IDE (recommended for simplicity):
-1. Open https://remix.ethereum.org
-2. Create VerificationRegistry.sol and paste the contract code
-3. Compile with Solidity 0.8.19+
-4. Deploy to Sepolia via MetaMask (Injected Provider)
-5. Copy the contract address to your .env
-"""
+"""Deploy VerificationRegistry contract to Ethereum Sepolia testnet."""
 
 import json
 import os

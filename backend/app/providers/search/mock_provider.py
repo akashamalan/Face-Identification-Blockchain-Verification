@@ -1,8 +1,4 @@
-"""Mock search provider — for automated testing ONLY.
-
-This provider returns deterministic fake results and is explicitly blocked
-from being used in production mode (enforced by Settings validator).
-"""
+"""Mock search provider — for automated testing ONLY."""
 
 from __future__ import annotations
 

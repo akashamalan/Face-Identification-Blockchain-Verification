@@ -16,18 +16,7 @@ class FingerprintService:
         input_image_bytes: bytes | None = None,
         matching: MatchingResult | None = None,
     ) -> Fingerprint:
-        """Convert a SearchResult into a canonical representation and hash it.
-
-        The hash covers more than the search metadata:
-          * input_image_sha256   — the uploaded image bytes
-          * matched_image_sha256 — the candidate image bytes that actually matched
-          * audit_bundle_sha256  — the ordered evaluation of EVERY candidate
-
-        Without the first two, the on-chain record said nothing about the images
-        themselves — either side could be swapped while the fingerprint still verified.
-        Without the third, the record proved a result was registered but not that it
-        was chosen honestly from the candidate set.
-        """
+        """Convert a SearchResult into a canonical representation and hash it."""
         canonical = CanonicalPostData(
             url=result.url,
             title=result.title,

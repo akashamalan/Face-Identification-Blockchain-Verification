@@ -39,7 +39,6 @@ export function ResultCard({
         {result.platform && <span className="chip">{result.platform}</span>}
       </div>
 
-      {/* verification indicator — this image came from the internet */}
       <SimilarityMeter score={result.similarity} threshold={threshold} />
 
       {result.match_reason && (

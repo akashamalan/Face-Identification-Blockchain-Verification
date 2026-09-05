@@ -12,8 +12,6 @@ class PipelineBaseError(Exception):
         super().__init__(message)
 
 
-# ── Face errors ──────────────────────────────────────────────────────────
-
 class InvalidImageError(PipelineBaseError):
     def __init__(self, message: str = "The uploaded file is not a valid image."):
         super().__init__(message, code="INVALID_IMAGE")
@@ -42,8 +40,6 @@ class FaceEncodingError(PipelineBaseError):
         super().__init__(message, code="FACE_ENCODING_FAILED")
 
 
-# ── Search errors ────────────────────────────────────────────────────────
-
 class SearchProviderError(PipelineBaseError):
     def __init__(self, message: str = "Search provider returned an error."):
         super().__init__(message, code="SEARCH_ERROR")
@@ -64,8 +60,6 @@ class NoSearchResultsError(PipelineBaseError):
         super().__init__(message, code="NO_SEARCH_RESULTS")
 
 
-# ── Blockchain errors ───────────────────────────────────────────────────
-
 class BlockchainError(PipelineBaseError):
     def __init__(self, message: str = "Blockchain operation failed."):
         super().__init__(message, code="BLOCKCHAIN_ERROR")
@@ -75,8 +69,6 @@ class BlockchainNotConfiguredError(PipelineBaseError):
     def __init__(self, message: str = "Blockchain is not configured. Set RPC_URL, PRIVATE_KEY, and CONTRACT_ADDRESS."):
         super().__init__(message, code="BLOCKCHAIN_NOT_CONFIGURED")
 
-
-# ── Verification errors ─────────────────────────────────────────────────
 
 class VerificationError(PipelineBaseError):
     def __init__(self, message: str = "Verification failed."):

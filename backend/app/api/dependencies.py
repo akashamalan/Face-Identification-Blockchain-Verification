@@ -41,8 +41,6 @@ def _build_blockchain_provider(settings: Settings) -> BlockchainProvider:
     )
 
 
-# ── Singletons ───────────────────────────────────────────────────────────
-
 _search_provider: SearchProvider | None = None
 _blockchain_provider: BlockchainProvider | None = None
 

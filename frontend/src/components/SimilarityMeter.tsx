@@ -1,16 +1,3 @@
-/**
- * Verification indicator shown after any image sourced from the internet.
- *
- * Fixed format, per spec:
- *   SIMILARITY   98.06%
- *   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━●━━
- *   HIGH CONFIDENCE
- *
- * The bar is a 33-cell monospace track; the ● sits at the cell corresponding to
- * the score. Drawn with text glyphs rather than a styled div so it stays exactly
- * on the monospace grid and carries no gradient, glow or rounded fill.
- */
-
 const TRACK = 33;
 
 function band(score: number, threshold: number) {

@@ -100,7 +100,7 @@ async def test_pipeline_verifies_against_readback_value():
 
 @pytest.mark.asyncio
 async def test_tamper_after_registration_returns_tampered():
-    """THE test. Register, then flip one character and re-verify against the same record."""
+    """Register, flip one character, re-verify against the same record."""
     chain = LocalBlockchainProvider()
     result = await _build(chain).run(b"fake-image-bytes", filename="x.jpg")
     assert result.verification.status == "VERIFIED"

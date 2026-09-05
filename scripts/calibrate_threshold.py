@@ -17,13 +17,7 @@ def cosine(a: np.ndarray, b: np.ndarray) -> float:
 
 
 def embed(rgb_float: np.ndarray) -> np.ndarray | None:
-    """Encode one LFW image -> 512-d embedding, or None if no face is detected.
-
-    sklearn returns float32 RGB scaled to [0, 1], so it must be rescaled to [0, 255]
-    before encoding — casting straight to uint8 collapses everything to black.
-    LFW faces are ~150px in a 250x250 frame; we upscale 2x because the detector is
-    configured for 640x640 inputs and small faces detect unreliably at native size.
-    """
+    """Encode one LFW image -> 512-d embedding, or None if no face is detected."""
     import cv2
 
     rgb8 = np.clip(rgb_float * 255.0, 0, 255).astype(np.uint8)
@@ -83,8 +77,6 @@ def main() -> int:
     from sklearn.datasets import fetch_lfw_pairs
 
     print("Fetching LFW pairs (color, full 250x250)...", flush=True)
-    # slice_=None keeps the full 250x250 frame; the default slice_ crops to 125x94,
-    # which is too small for reliable detection.
     ds = fetch_lfw_pairs(subset="train", color=True, resize=1.0, funneled=True, slice_=None)
     pairs, target = ds.pairs, ds.target  # (n,2,250,250,3), 1=same 0=different
     print(f"LFW train: {len(pairs)} pairs available", flush=True)
@@ -120,8 +112,6 @@ def main() -> int:
 
     rs, rd = percentile_report("same-person", same), percentile_report("different-person", diff)
 
-    # Sweep every candidate threshold; pick by Youden's J (maximises TPR-FPR), and
-    # also report the strictest threshold that admits zero false accepts.
     grid = np.round(np.arange(0.10, 0.85, 0.005), 4)
     sweep = []
     for t in grid:

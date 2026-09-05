@@ -1,12 +1,4 @@
-"""Verification service — recomputes the fingerprint and compares it against the
-value read back from the blockchain.
-
-IMPORTANT CONTRACT: `on_chain_fingerprint` must be a value that was *read back*
-from the chain (via a getRecord call), never the value the caller just submitted.
-Passing the submitted value back in makes this a comparison of a value against
-itself, which can only ever return VERIFIED and proves nothing. The pipeline
-enforces this by calling BlockchainProvider.get_record() before verifying.
-"""
+"""Verification service — recomputes the fingerprint and compares it against the"""
 
 from __future__ import annotations
 
@@ -31,8 +23,7 @@ class VerificationService:
         transaction_hash: str = "",
         record_id: str = "",
     ) -> VerificationResult:
-        """Recompute the fingerprint from canonical data and compare with the
-        fingerprint retrieved from the chain."""
+        """Recompute the fingerprint from canonical data and compare with the"""
         t0 = time.perf_counter()
 
         local_fp = fingerprint_dict(canonical_data)

@@ -1,13 +1,4 @@
-"""Face quality gating.
-
-A blurry 30x30 crop still yields a 512-d vector, and that vector can land above
-the similarity threshold by luck. Gating refuses such faces before they reach the
-scorer rather than trusting the threshold to catch them.
-
-Thresholds here are MEASURED, not assumed — see scripts/measure_variants.py,
-which sweeps them against LFW and reports the effect on the same/different gap.
-Anything that does not widen the gap is not kept.
-"""
+"""Face quality gating."""
 
 from __future__ import annotations
 
@@ -28,10 +19,7 @@ DEFAULT_THRESHOLDS = QualityThresholds()
 
 
 def quality_reason(face: dict, t: QualityThresholds = DEFAULT_THRESHOLDS) -> str:
-    """Return "" if the face passes, else a short human-readable failure reason.
-
-    `face` is a dict from insightface_provider.detect_faces().
-    """
+    """Return "" if the face passes, else a short human-readable failure reason."""
     area = float(face.get("area_px", 0.0))
     if area < t.min_area_px:
         side = area ** 0.5

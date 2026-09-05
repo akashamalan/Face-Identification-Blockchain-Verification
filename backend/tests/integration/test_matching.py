@@ -63,7 +63,6 @@ def images():
     small = cv2.resize(arr, None, fx=0.85, fy=0.85, interpolation=cv2.INTER_AREA)
     same_person = cv2.imencode(".png", small)[1].tobytes()
 
-    # A flat grey rectangle — decodes fine, contains no face.
     no_face = cv2.imencode(".jpg", np.full((300, 300, 3), 127, np.uint8))[1].tobytes()
 
     return {"original": original, "same_person": same_person, "no_face": no_face}

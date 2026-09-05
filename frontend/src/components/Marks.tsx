@@ -1,11 +1,5 @@
 import wordmarkUrl from "../assets/hacker-house-wordmark.png";
 
-/**
- * The HACKER HOUSE wordmark, used as the primary brand element at the top of the
- * page. Supplied asset, unmodified: 1148x237 PNG with alpha, 26.5 KB — already
- * web-optimal, so it is served as-is rather than re-encoded. Its built-in offset
- * black shadow is the same zero-blur treatment the rest of the system uses.
- */
 export function HackerHouseWordmark() {
   return (
     <img
@@ -19,10 +13,6 @@ export function HackerHouseWordmark() {
   );
 }
 
-/**
- * A small palm. Single-weight strokes, drawn by hand in path data — not a stock
- * illustration, and deliberately tiny enough to read as a mark rather than art.
- */
 export function PalmMark({ size = 14 }: { size?: number }) {
   return (
     <svg
@@ -46,10 +36,6 @@ export function PalmMark({ size = 14 }: { size?: number }) {
   );
 }
 
-/**
- * A restrained hand-drawn rule. One irregular stroke, no flourish — it exists to
- * separate, not to decorate.
- */
 export function HandRule() {
   return (
     <svg

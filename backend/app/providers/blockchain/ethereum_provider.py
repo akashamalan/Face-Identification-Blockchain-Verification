@@ -1,7 +1,4 @@
-"""Ethereum (Sepolia) blockchain provider using Web3.py.
-
-All credentials come from environment variables — never hardcoded.
-"""
+"""Ethereum (Sepolia) blockchain provider using Web3.py."""
 
 from __future__ import annotations
 
@@ -79,13 +76,7 @@ SEPOLIA_EXPLORER = "https://sepolia.etherscan.io"
 
 
 def _hex(value) -> str:
-    """Normalise bytes / HexBytes / str to bare lowercase hex with no 0x prefix.
-
-    hexbytes >= 2.0 returns HexBytes.hex() without the 0x prefix, but 1.x returned
-    it *with* one, and hexbytes is a transitive dependency we do not pin directly.
-    Normalising here keeps on-chain values comparable to our bare SHA-256 hex
-    regardless of which version resolves.
-    """
+    """Normalise bytes / HexBytes / str to bare lowercase hex with no 0x prefix."""
     if isinstance(value, str):
         raw = value
     elif hasattr(value, "hex"):
@@ -162,19 +153,12 @@ class EthereumProvider(BlockchainProvider):
                 self._w3.eth.wait_for_transaction_receipt, tx_hash, timeout=self._timeout
             )
 
-            # A reverted tx still produces a receipt. Without this check a revert
-            # would be reported as a successful registration.
             if receipt.get("status") != 1:
                 raise BlockchainError(
                     f"Transaction 0x{_hex(tx_hash)} reverted on-chain "
                     f"(status={receipt.get('status')}, block {receipt['blockNumber']})."
                 )
 
-            # Extract recordId from the event log. This is the ONLY way to obtain it —
-            # the contract computes it as keccak256(fingerprint, sender, block.timestamp),
-            # which we cannot reproduce off-chain (we do not know the block timestamp).
-            # Failing to decode it means the record can never be read back, so this is
-            # a hard error rather than something to swallow.
             logs = self._contract.events.RecordRegistered().process_receipt(receipt)
             if not logs:
                 raise BlockchainError(

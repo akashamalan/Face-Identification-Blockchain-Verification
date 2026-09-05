@@ -56,13 +56,7 @@ class SearchResponse(BaseModel):
 
 
 class CandidateEvidence(BaseModel):
-    """One candidate's full evaluation record — the unit of the audit bundle.
-
-    Every candidate the search returned gets one of these, in search-return order,
-    whether it was scored or skipped. Hashing the whole ordered list is what makes
-    the search auditable: a verifier can confirm the winner was chosen on similarity
-    and that no candidate was quietly dropped or reordered.
-    """
+    """One candidate's full evaluation record — the unit of the audit bundle."""
     position: int = Field(description="0-based index in the order the search returned")
     url: str = ""
     domain: str = ""
@@ -70,6 +64,8 @@ class CandidateEvidence(BaseModel):
     image_sha256: str = Field(default="", description="SHA-256 of the downloaded bytes")
     image_bytes: int = 0
     faces_detected: int = 0
+    download_ms: float = 0.0
+    encode_ms: float = 0.0
     matched_face_index: int | None = Field(
         default=None,
         description="WHICH face in the candidate image produced the score. Without "
@@ -110,12 +106,7 @@ class MatchingResult(BaseModel):
 
 
 class CanonicalPostData(BaseModel):
-    """Canonical representation of a discovered result for fingerprinting.
-
-    Includes the input and matched image digests and the audit-bundle digest, so the
-    on-chain fingerprint covers the actual image bytes and the full candidate
-    evaluation — not just the search metadata.
-    """
+    """Canonical representation of a discovered result for fingerprinting."""
     url: str
     title: str
     domain: str

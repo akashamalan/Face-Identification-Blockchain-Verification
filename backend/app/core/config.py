@@ -11,7 +11,6 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    # ── App ──────────────────────────────────────────────────────────────
     APP_NAME: str = "Face Verification Pipeline"
     APP_VERSION: str = "1.0.0"
     ENV: Literal["development", "production", "testing"] = "development"
@@ -19,20 +18,16 @@ class Settings(BaseSettings):
     HOST: str = "0.0.0.0"
     PORT: int = 8000
 
-    # ── CORS ─────────────────────────────────────────────────────────────
-    CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:3000"]
+    CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]
 
-    # ── Upload limits ────────────────────────────────────────────────────
     MAX_UPLOAD_SIZE_MB: int = 10
     ALLOWED_IMAGE_EXTENSIONS: list[str] = [".jpg", ".jpeg", ".png", ".webp"]
     TEMP_DIR: str = "tmp_uploads"
 
-    # ── Search provider ──────────────────────────────────────────────────
     SEARCH_PROVIDER: Literal["serpapi", "mock"] = "serpapi"
     SERPAPI_API_KEY: str = ""
     SEARCH_TIMEOUT_SECONDS: int = 30
 
-    # ── Blockchain ───────────────────────────────────────────────────────
     BLOCKCHAIN_PROVIDER: Literal["ethereum", "local"] = "ethereum"
     BLOCKCHAIN_RPC_URL: str = ""
     BLOCKCHAIN_PRIVATE_KEY: str = ""
@@ -40,20 +35,13 @@ class Settings(BaseSettings):
     CHAIN_ID: int = 11155111  # Sepolia
     BLOCKCHAIN_TIMEOUT_SECONDS: int = 120
 
-    # ── Face engine ──────────────────────────────────────────────────────
     FACE_DETECTION_MODEL: str = "buffalo_l"
     FACE_DETECTION_THRESHOLD: float = 0.5
 
-    # ── Candidate matching (stage 3) ─────────────────────────────────────
-    # MEASURED, not guessed. See scripts/calibrate_threshold.py and
-    # docs/threshold_calibration.json. On 100 same-person + 100 different-person
-    # LFW pairs with buffalo_l, TPR 0.990 / FPR 0.000 held flat from 0.12 to 0.40;
-    # sensitivity then fell (0.45 -> 0.970, 0.50 -> 0.890). 0.40 is the top of that
-    # plateau: the widest margin against false accepts (+0.28 above the highest
-    # observed different-person score of 0.1194) at no cost in recall.
     MATCH_THRESHOLD: float = 0.40
     MATCH_MAX_CANDIDATES: int = 60
     MATCH_CONCURRENCY: int = 4
+    MATCH_DOWNLOAD_CONCURRENCY: int = 16
     MATCH_DOWNLOAD_TIMEOUT_SECONDS: int = 10
     MATCH_MAX_IMAGE_BYTES: int = 8 * 1024 * 1024
 

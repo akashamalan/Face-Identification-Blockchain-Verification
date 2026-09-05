@@ -16,7 +16,6 @@ async def health():
     settings = get_settings()
     services: dict[str, str] = {}
 
-    # Face engine — always available (loaded lazily)
     services["face_engine"] = "ready"
 
     # Search provider

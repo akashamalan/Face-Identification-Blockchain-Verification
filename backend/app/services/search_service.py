@@ -52,7 +52,6 @@ class SearchService:
         """Sort results: Google Lens visual match position first, prioritizing social platforms."""
 
         def score(r: SearchResult) -> tuple[int, int, int, str]:
-            # position is assigned 1, 2, 3... by SerpAPI/Google Lens based on visual similarity
             pos = int(r.metadata.get("position", 999))
             social = 0 if r.platform else 1
             has_snippet = 0 if r.snippet else 1
