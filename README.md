@@ -139,7 +139,8 @@ source URL. **No images. No face data. No personal information.**
 ## How It Works
 
 ```
-        ![Uploading WhatsApp Image 2026-04-18 at 13.18.57 (3).jpeg…]()
+<img width="959" height="1280" alt="WhatsApp Image 2026-04-18 at 13 18 57 (3)" src="https://github.com/user-attachments/assets/2c78c0fd-771f-49b8-9023-61d26b6704d7" />
+
 
               │
               ▼
