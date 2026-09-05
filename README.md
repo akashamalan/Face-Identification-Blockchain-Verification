@@ -137,11 +137,9 @@ source URL. **No images. No face data. No personal information.**
 ---
 
 ## How It Works
-    
 
-<img width="50" height="50" alt="WhatsApp Image 2026-04-18 at 13 18 57 (3)" src="https://github.com/user-attachments/assets/fb1cdf13-4f32-4c81-8394-7e9bca51faf6" />
-
-
+```
+        your face photo
               │
               ▼
    ┌──────────────────────┐
@@ -172,7 +170,6 @@ source URL. **No images. No face data. No personal information.**
    │ 6. READ BACK & CHECK │  fetch from chain, recompute,
    │                      │  compare. Match = VERIFIED
    └──────────────────────┘
-
 ```
 
 ### Why step 3 matters
