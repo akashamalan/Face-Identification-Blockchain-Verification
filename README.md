@@ -1,6 +1,3 @@
-Here's the README. Paste it in as `README.md`.
-
-```markdown
 # Face Identification & Blockchain Verification
 
 Find where a face appears online — and prove the search was honest.
