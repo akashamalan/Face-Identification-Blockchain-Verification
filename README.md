@@ -386,6 +386,32 @@ No timestamps or random values are included in the hash input.
 
 ## Blockchain
 
+### Live deployment
+
+| | |
+|---|---|
+| network | Ethereum **Sepolia** testnet (chain ID 11155111) |
+| contract | [`0x72a6c6df6643297028CE6980118cb071cb7Ad657`](https://sepolia.etherscan.io/address/0x72a6c6df6643297028CE6980118cb071cb7Ad657) |
+| contract source | [`contracts/VerificationRegistry.sol`](contracts/VerificationRegistry.sol) (Solidity 0.8.19) |
+
+### Verified end-to-end on-chain
+
+Not simulated. A fingerprint was registered, read back with `getRecord()`, and
+re-verified. Raw output in [`docs/sepolia_proof.json`](docs/sepolia_proof.json).
+
+| step | value |
+|---|---|
+| tx | [`0x8f999c2e842d1f7be09d0315b24cf5d63e0b8c3c119762cbe2b07df5c6528a2a`](https://sepolia.etherscan.io/tx/0x8f999c2e842d1f7be09d0315b24cf5d63e0b8c3c119762cbe2b07df5c6528a2a) |
+| block | 11638730 (confirmed in 50.5s) |
+| record id | `0x03db3a5815e4c68d82a27e204436d14060918c3919b418de7647d2b16f8528f0` |
+| fingerprint written | `a2bae4b5…0e0e00` |
+| read back from chain | `a2bae4b5…0e0e00` → **VERIFIED** |
+| one character changed | recomputed `5a4da3ed…` ≠ chain `a2bae4b5…` → **TAMPERED** |
+
+The tamper check re-fetches the record from chain and compares against what the
+chain returns — never against the value that was submitted. See
+`backend/app/services/pipeline_service.py` stages 6–7.
+
 - **Network**: Ethereum Sepolia testnet (chain ID 11155111)
 - **Contract**: `VerificationRegistry` — stores fingerprint hashes
 - **Stored data**: SHA-256 fingerprint (bytes32), source URL, timestamp, submitter
