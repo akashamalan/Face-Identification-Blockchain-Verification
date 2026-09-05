@@ -55,7 +55,7 @@ export function ImageUpload({ onFileSelected, disabled }: Props) {
           <img
             src={preview}
             alt="Uploaded face"
-            className="max-h-56 panel-flat"
+            className="max-h-56 img-frame img-frame-lg"
             style={{ objectFit: "contain" }}
           />
           <p className="mono-break m-0">{fileName}</p>

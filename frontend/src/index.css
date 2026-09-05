@@ -62,7 +62,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background: #0B6839;
   color: var(--color-fg);
   font-family: var(--font-mono);
   font-size: var(--text-base2);
@@ -76,7 +76,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 0.92;
+  line-height: 1.02;   /* was 0.92 — gives the display type more vertical room */
   margin: 0;
   font-variation-settings: "opsz" 80;
 }
@@ -149,9 +149,12 @@ summary {
   background: var(--color-bg);
 }
 
+/* All status fills carry BLACK ink. Cream on these saturated mid-tones measures
+   3.19:1 (green) and 3.62:1 (red) — both fail AA for text this small. Black
+   gives 6.5:1 and 6.1:1, and matches the system's black-on-colour logic. */
 .chip-ok {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-fg);
 }
 .chip-warn {
   background: var(--color-secondary);
@@ -159,11 +162,13 @@ summary {
 }
 .chip-bad {
   background: var(--color-danger);
-  color: var(--color-bg);
+  color: var(--color-fg);
 }
 .chip-live {
   background: var(--color-accent);
-  color: var(--color-bg);
+  /* Cream on #ff0080 is 3.63:1 — fails AA for text this small. Black on the
+     same pink is 5.56:1 and passes. */
+  color: var(--color-fg);
 }
 
 .eyebrow {
@@ -204,15 +209,15 @@ summary {
 
 .stage-node[data-status="running"] {
   background: var(--color-accent);
-  color: var(--color-bg);
+  color: var(--color-fg);   /* 5.56:1, vs 3.63:1 for cream — see .chip-live */
 }
 .stage-node[data-status="success"] {
   background: var(--color-primary);
-  color: var(--color-bg);
+  color: var(--color-fg);
 }
 .stage-node[data-status="error"] {
   background: var(--color-danger);
-  color: var(--color-bg);
+  color: var(--color-fg);
 }
 
 /* ── dropzone ───────────────────────────────────────────────────────────── */
@@ -383,4 +388,140 @@ summary {
   font-size: var(--text-xs2);
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+/* ============================================================================
+   Brand lockup, image framing, link affordance
+   ========================================================================= */
+
+/* ── 3+4. brand lockup: HACKER HOUSE wordmark + "Task Three" ─────────────── */
+
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Centered rather than right-aligned */
+  gap: 0.15rem;
+  margin-bottom: var(--s-6);
+}
+
+.brand-wordmark {
+  display: block;
+  width: 100%;
+  max-width: 20rem;        /* Made smaller from 40rem */
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ── 5. "Task Three" — script, brand pink ────────────────────────────────── */
+
+.task-three {
+  font-family: "Great Vibes", "Apple Chancery", cursive;
+  color: var(--color-accent);
+  font-size: clamp(1.2rem, 3vw, 1.8rem); /* Made smaller */
+  line-height: 1.15;
+  letter-spacing: 0.06em;   /* script letterforms need air to stay readable */
+  margin: 0;
+  padding-right: 0;
+}
+
+/* ── 1. image highlighting ───────────────────────────────────────────────── */
+
+/* Every content image gets the same hard-edged treatment as a panel: solid
+   2px black border + zero-blur offset shadow. Consistent with the system —
+   no glow, no soft shadow, no rounded-pill framing. */
+.img-frame {
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+  box-shadow: var(--shadow-hh-sm);
+  background: var(--color-bg);
+  display: block;
+}
+
+.img-frame-lg {
+  box-shadow: var(--shadow-hh-lg);
+}
+
+/* thumbnails inside result cards read as objects, not decoration */
+.img-thumb {
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius-hh);
+  box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 0px 0px;
+  background: var(--color-bg);
+  object-fit: cover;
+}
+
+/* ── 2. link visibility ──────────────────────────────────────────────────── */
+
+/* Links are black text (19.6:1 on cream) with a thick accent underline, so
+   clickability is carried by BOTH colour and a non-colour cue. */
+a:not(.nav-plain) {
+  color: var(--color-fg);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: background-color 120ms ease-out, text-decoration-thickness 120ms ease-out;
+}
+
+a:not(.nav-plain):hover {
+  background: var(--color-secondary);   /* yellow highlight — unmistakable */
+  text-decoration-thickness: 3px;
+}
+
+a:not(.nav-plain):visited {
+  color: var(--color-fg);
+}
+
+/* ── 7. focus states on everything interactive ───────────────────────────── */
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible,
+.dropzone:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-hh);
+}
+
+/* ── 6. responsive ───────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .brand-wordmark { max-width: 18rem; }
+}
+
+@media (max-width: 560px) {
+  .brand-lockup { align-items: center; }
+  .task-three { padding-right: 0; }
+}
+
+@media (max-width: 400px) {
+  .brand-wordmark { max-width: 80%; }
+  .task-three { font-size: clamp(1.2rem, 6vw, 1.5rem); }
+}
+
+/* ── contrast hairline in the column gutter ──────────────────────────────── */
+
+/* A single solid black hairline centred in the gap between the two columns.
+   1px rather than the system's usual 2px, and only where two columns actually
+   exist — enough to separate the halves without competing with the panels.
+   Solid colour, not a reduced-opacity grey, so the no-translucency rule holds. */
+@media (min-width: 1024px) {
+  .split-rule {
+    position: relative;
+  }
+
+  .split-rule::before {
+    content: "";
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    left: 50%;
+    width: 1px;
+    margin-left: -0.5px;
+    background: var(--color-fg);
+    pointer-events: none;
+  }
 }

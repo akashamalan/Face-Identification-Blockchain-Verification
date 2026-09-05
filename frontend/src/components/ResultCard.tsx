@@ -28,7 +28,7 @@ export function ResultCard({
           <img
             src={result.thumbnail}
             alt={`Matched image from ${result.domain || "the discovered result"}`}
-            className="w-16 h-16 panel-flat shrink-0"
+            className="w-16 h-16 img-thumb shrink-0"
             style={{ objectFit: "cover" }}
           />
         )}

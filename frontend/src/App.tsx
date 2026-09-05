@@ -5,7 +5,7 @@ import { ResultCard } from "./components/ResultCard";
 import { VerificationBadge } from "./components/VerificationBadge";
 import { HealthStatus } from "./components/HealthStatus";
 import { SimilarityMeter } from "./components/SimilarityMeter";
-import { HHGoaMark, PalmMark, HandRule } from "./components/Marks";
+import { PalmMark, HandRule, HackerHouseWordmark } from "./components/Marks";
 import { runPipeline } from "./services/api";
 import type { PipelineResult, SearchResult, StageStatus } from "./types";
 
@@ -118,31 +118,38 @@ export default function App() {
   const m = result?.matching;
 
   return (
-    <div className="max-w-6xl mx-auto px-5 py-8">
+    <div className="max-w-6xl mx-auto px-5 py-8" style={{ backgroundColor: "var(--color-bg)", minHeight: "100vh" }}>
       {/* Flush-left masthead. No centred hero, no rounded CTA. */}
       <header className="pb-4 mb-8" style={{ borderBottom: "2px solid var(--color-fg)" }}>
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <p className="eyebrow m-0">01 —— hacker house goa 2026 · task 3</p>
-          <HHGoaMark height={34} />
+        {/* Primary brand lockup: wordmark with "Task Three" set beneath its
+            right edge, so the two read as one unit. */}
+        <div className="brand-lockup">
+          <HackerHouseWordmark />
+          <p className="task-three">Task 3</p>
         </div>
+
         <h1
           style={{
             fontSize: "var(--text-4xl2)",
             fontVariationSettings: '"opsz" 100',
+            lineHeight: 1.06,
           }}
-          className="my-2"
+          className="mt-3 mb-4"
         >
           Face Verification
           <br />
           Pipeline
         </h1>
-        <p className="eyebrow m-0 mb-4" style={{ letterSpacing: "0.1em" }}>
+        <p
+          className="eyebrow m-0 mb-4"
+          style={{ letterSpacing: "0.1em", color: "var(--color-fg)" }}
+        >
           face → search → re-encode &amp; score → fingerprint → chain → read-back
         </p>
         <HealthStatus />
       </header>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 lg:grid-cols-2 split-rule">
         {/* ── left ── */}
         <div className="flex flex-col gap-6 min-w-0">
           <section>

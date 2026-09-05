@@ -1,16 +1,20 @@
-import logoUrl from "../assets/hh-goa-logo.svg";
+import wordmarkUrl from "../assets/hacker-house-wordmark.png";
 
 /**
- * The wordmark, used verbatim. The SVG file is byte-identical to the one supplied
- * and is referenced as an asset rather than inlined, so nothing can modify it.
+ * The HACKER HOUSE wordmark, used as the primary brand element at the top of the
+ * page. Supplied asset, unmodified: 1148x237 PNG with alpha, 26.5 KB — already
+ * web-optimal, so it is served as-is rather than re-encoded. Its built-in offset
+ * black shadow is the same zero-blur treatment the rest of the system uses.
  */
-export function HHGoaMark({ height = 34 }: { height?: number }) {
+export function HackerHouseWordmark() {
   return (
     <img
-      src={logoUrl}
-      alt="HH GOA"
-      height={height}
-      style={{ height, width: "auto", display: "block" }}
+      src={wordmarkUrl}
+      alt="Hacker House"
+      className="brand-wordmark"
+      width={1148}
+      height={237}
+      decoding="async"
     />
   );
 }
