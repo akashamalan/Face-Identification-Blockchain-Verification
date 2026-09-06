@@ -284,7 +284,7 @@ afterthought.
 
 | Problem | Fix |
 |---|---|
-| `insufficient funds` on deploy | Wallet is empty. Get free Sepolia ETH from a faucet. |
+| `insufficient funds` on deploy | Wallet is empty. Get free Sepolia ETH from the [PK910 Sepolia Faucet](https://sepolia-faucet.pk910.de/). |
 | Model download hangs on first run | ~300 MB over your connection. Give it a few minutes. |
 | `No face detected` | Photo needs one clear, reasonably sized face. |
 | SerpAPI 429 | Monthly free quota hit. Switch to the mock provider. |
