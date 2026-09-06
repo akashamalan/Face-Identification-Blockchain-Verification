@@ -92,11 +92,13 @@ Open `.env` and fill in:
 
 ### 3. Deploy the smart contract
 
+The deployment script is located in the repository root, so first move out of
+the `backend` directory:
+
 ```bash
+cd ..
 python scripts/deploy_contract.py
 ```
-
-Copy the address it prints into `CONTRACT_ADDRESS` in `.env`.
 
 ### 4. Run it
 
