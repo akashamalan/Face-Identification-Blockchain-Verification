@@ -55,11 +55,22 @@ Built for Hacker House Goa 2026, Task 3.
 git clone https://github.com/akashamalan/Face-Identification-Blockchain-Verification.git
 cd Face-Identification-Blockchain-Verification/backend
 
+# Create a fresh virtual environment for THIS project
 python -m venv venv
-venv\Scripts\activate          # Windows
-# source venv/bin/activate     # Mac / Linux
 
-pip install -r requirements.txt
+# Windows PowerShell
+.\venv\Scripts\Activate.ps1
+
+# Mac / Linux
+# source venv/bin/activate
+
+# Verify that Python comes from this project's venv
+python --version
+where.exe python          # Windows
+# which python            # Mac / Linux
+
+# Install dependencies
+python -m pip install -r requirements.txt
 ```
 
 ### 2. Add your keys
